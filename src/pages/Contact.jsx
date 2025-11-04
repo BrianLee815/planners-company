@@ -5,44 +5,45 @@ export default function Contact() {
   const [loading, setLoading] = useState(false);
 
   // Google Form 제출 URL
-  const WEB_FORM_URL = "https://docs.google.com/forms/d/e/1FAIpQLSd7ZqKAvJBaGlSGVPKykrvjEj9SZnFcghg_UhIRQ1ScuItRCA/formResponse";
+  const WEB_FORM_URL =
+    "https://docs.google.com/forms/d/e/1FAIpQLSd7ZqKAvJBaGlSGVPKykrvjEj9SZnFcghg_UhIRQ1ScuItRCA/formResponse";
 
   // Google Form 질문 entry ID
   const ENTRY_IDS = {
     name: "entry.841785272",
     email: "entry.1947142295",
-    message: "entry.1543102402"
+    message: "entry.1543102402",
   };
 
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     setLoading(true);
 
-    // hidden form 생성
-    const form = document.createElement("form");
-    form.action = WEB_FORM_URL;
-    form.method = "POST";
-    form.target = "_blank"; // 새 탭에서 열기
+    try {
+      // fetch + no-cors 모드 사용 → 페이지 이동 없이 제출
+      const formDataObj = new URLSearchParams();
+      Object.keys(formData).forEach((key) => {
+        formDataObj.append(ENTRY_IDS[key], formData[key]);
+      });
 
-    Object.keys(formData).forEach((key) => {
-      const input = document.createElement("input");
-      input.type = "hidden";
-      input.name = ENTRY_IDS[key];
-      input.value = formData[key];
-      form.appendChild(input);
-    });
+      await fetch(WEB_FORM_URL, {
+        method: "POST",
+        mode: "no-cors",
+        body: formDataObj,
+      });
 
-    document.body.appendChild(form);
-    form.submit();
-    document.body.removeChild(form);
-
-    alert("문의가 제출되었습니다!");
-    setFormData({ name: "", email: "", message: "" });
-    setLoading(false);
+      alert("문의가 제출되었습니다!");
+      setFormData({ name: "", email: "", message: "" });
+    } catch (err) {
+      console.error(err);
+      alert("문의 제출 실패");
+    } finally {
+      setLoading(false);
+    }
   };
 
   return (
