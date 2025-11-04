@@ -6,16 +6,41 @@ export default function Contact() {
     email: "",
     message: ""
   });
+  const [loading, setLoading] = useState(false);
 
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log(formData);
-    alert("문의가 제출되었습니다!"); // 나중에 서버 전송 기능 추가 가능
-    setFormData({ name: "", email: "", message: "" });
+    setLoading(true);
+
+    try {
+      const response = await fetch("YOUR_WEB_APP_URL", { // 배포한 Web App URL
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json"
+        },
+        body: JSON.stringify({
+          ...formData,
+          secretKey: "MY_SECRET_KEY" // 🔒 인증용 secretKey 포함
+        })
+      });
+
+      const data = await response.json();
+      if (data.status === "success") {
+        alert("문의가 제출되었습니다!");
+        setFormData({ name: "", email: "", message: "" });
+      } else {
+        alert(`오류 발생: ${data.message}`);
+      }
+    } catch (err) {
+      console.error(err);
+      alert("문의 제출 실패");
+    } finally {
+      setLoading(false);
+    }
   };
 
   return (
@@ -63,11 +88,13 @@ export default function Contact() {
 
         <button
           type="submit"
+          disabled={loading}
           className="bg-primary text-white px-6 py-2 rounded-full hover:bg-accent transition"
         >
-          보내기
+          {loading ? "제출 중..." : "보내기"}
         </button>
       </form>
     </div>
   );
 }
+
