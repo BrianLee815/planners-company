@@ -5,7 +5,7 @@ export default function Contact() {
   const [loading, setLoading] = useState(false);
 
   // Google Form 제출 URL
-  const WEB_FORM_URL = "https://docs.google.com/forms/d/e/1FAIpQLSf1234567890abcdefg/formResponse";
+  const WEB_FORM_URL = "https://docs.google.com/forms/d/e/1FAIpQLSd7ZqKAvJBaGlSGVPKykrvjEj9SZnFcghg_UhIRQ1ScuItRCA/formResponse";
 
   // Google Form 질문 entry ID
   const ENTRY_IDS = {
