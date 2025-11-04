@@ -1,0 +1,75 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+/* 기본 body 스타일 */
+body {
+  background-color: #1A1A1A;
+  color: #FFFFFF;
+  font-family: "Pretendard", sans-serif;
+  min-height: 100vh;
+}
+
+
+/* #root 전체 스타일 */
+#root {
+  @apply max-w-[1280px] mx-auto p-8 text-center;
+  background-color: inherit;
+  color: inherit;
+}
+
+/* 카드 */
+.card {
+  @apply bg-dark-800 text-white shadow-lg rounded-lg p-6;
+}
+
+/* 버튼 */
+button, .btn {
+  @apply px-4 py-2 rounded-full border border-white text-white hover:bg-white hover:text-dark transition;
+}
+
+/* 링크 */
+a {
+  @apply text-white hover:text-accent transition;
+  text-decoration: none;
+}
+
+/* 입력폼 */
+input, textarea, select {
+  @apply bg-dark-700 text-white border border-gray-600 rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-primary;
+}
+
+/* 로고 */
+.logo {
+  height: 6em;
+  padding: 1.5em;
+  will-change: filter;
+  transition: filter 300ms;
+}
+.logo:hover {
+  filter: drop-shadow(0 0 2em #646cffaa);
+}
+.logo.react:hover {
+  filter: drop-shadow(0 0 2em #61dafbaa);
+}
+
+@keyframes logo-spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  a:nth-of-type(2) .logo {
+    animation: logo-spin infinite 20s linear;
+  }
+}
+
+/* 반응형 예제 */
+@media (max-width: 768px) {
+  nav {
+    @apply flex flex-col gap-4;
+  }
+}
+
+
