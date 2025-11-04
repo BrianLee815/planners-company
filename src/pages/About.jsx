@@ -20,7 +20,7 @@ export default function About() {
         <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
           {/* Team Leader */}
           <svg className="w-8 h-8 mx-auto mb-4" fill="none" stroke="currentColor" strokeWidth="1.8" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><circle cx="12" cy="7" r="4"/><path d="M4 21c0-4 4-7 8-7s8 3 8 7"/></svg>
-          <div className="bg-gray border border-gray-200 p-8 rounded-xl shadow-sm hover:shadow-md transition">
+          <div className="bg-gray-600 border border-gray-200 p-8 rounded-xl shadow-sm hover:shadow-md transition">
             <h3 className="text-xl font-semibold mb-2 text-gray-200">정형진</h3>
             <p className="text-sm font-medium text-primary mb-3">전략기획팀 팀장</p>
             <p className="text-sm text-gray-300 leading-relaxed">행사 기획 및 총괄 운영 책임</p>
