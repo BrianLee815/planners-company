@@ -1,5 +1,6 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import Navbar from "./components/Navbar"; // 경로 확인
+import Navbar from "./components/Navbar";
+import Footer from "./components/Footer"; // 경로 확인
 import Home from "./pages/Home";
 import About from "./pages/About";
 import Projects from "./pages/Projects";
@@ -26,6 +27,7 @@ export default function App() {
         </main>
 
       </div>
+      <Footer />
     </Router>
   );
 }
