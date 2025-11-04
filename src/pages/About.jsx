@@ -32,14 +32,14 @@ export default function About() {
             <h3 className="text-xl font-semibold mb-2 text-gray-200">문선주</h3>
             <p className="text-sm text-gray-300 leading-relaxed">행사 운영 / 현장 관리 / 기획 지원</p>
           </div>
-         
-          <div className="bg-gray border border-gray-200 p-8 rounded-xl shadow-sm hover:shadow-md transition">
-            <h3 className="text-xl font-semibold mb-2 text-gray-200">조서영</h3>
-            <p className="text-sm text-gray-300 leading-relaxed">행사 운영 / 현장 관리 / 기획 지원</p>
-          </div>
 
           <div className="bg-gray border border-gray-200 p-8 rounded-xl shadow-sm hover:shadow-md transition">
             <h3 className="text-xl font-semibold mb-2 text-gray-200">전략기획팀 팀원</h3>
+            <p className="text-sm text-gray-300 leading-relaxed">행사 운영 / 현장 관리 / 기획 지원</p>
+          </div>
+         
+          <div className="bg-gray border border-gray-200 p-8 rounded-xl shadow-sm hover:shadow-md transition">
+            <h3 className="text-xl font-semibold mb-2 text-gray-200">조서영</h3>
             <p className="text-sm text-gray-300 leading-relaxed">행사 운영 / 현장 관리 / 기획 지원</p>
           </div>
 
