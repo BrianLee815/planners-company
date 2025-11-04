@@ -22,28 +22,26 @@ export default function Home() {
   return (
     <div className="pt-5">
       {/* Hero Section */}
-      <section className="relative pt-10 h-screen flex items-center justify-center text-center px-6 text-white">
-         <img
-           src="/images/hero-bg.jpg"
-           alt="배경 이미지"
-           className="absolute inset-0 w-full h-full object-cover -z-10"
-         />
-         <div className="bg-primary/30 absolute inset-0 -z-10"></div> {/* 그라디언트 오버레이 */}
-  
-         <motion.div
-           initial={{ opacity: 0, y: -50 }}
-           animate={{ opacity: 1, y: 0 }}
-           transition={{ duration: 1 }}
-         >
-          <h2 className="text-5xl md:text-6xl font-serif font-bold mb-6">
-            국제회의 · 포럼 · 전시/박람회 · 시상식
-         </h2>
-         <p className="text-lg md:text-xl font-light tracking-wide max-w-2xl mx-auto">
-         플래너스 컴퍼니는 전문성과 창의성을 바탕으로  
-         품격 있는 행사 경험을 제공합니다.
-        </p>
-     </motion.div>
-    </section>
+      <section
+  className="pt-10 h-screen flex items-center justify-center text-center px-6
+             bg-[url('/images/hero-bg.jpg')] bg-cover bg-center
+             bg-gradient-to-b from-primary/80 to-[#0F4C75]/90 bg-blend-overlay text-white"
+>
+  <motion.div
+    initial={{ opacity: 0, y: -50 }}
+    animate={{ opacity: 1, y: 0 }}
+    transition={{ duration: 1 }}
+  >
+    <h2 className="text-5xl md:text-6xl font-serif font-bold mb-6">
+      국제회의 · 포럼 · 전시/박람회 · 시상식
+    </h2>
+    <p className="text-lg md:text-xl font-light tracking-wide max-w-2xl mx-auto">
+      플래너스 컴퍼니는 전문성과 창의성을 바탕으로  
+      품격 있는 행사 경험을 제공합니다.
+    </p>
+  </motion.div>
+</section>
+
 
 
       {/* Services Section */}
