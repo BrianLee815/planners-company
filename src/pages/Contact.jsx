@@ -15,30 +15,26 @@ export default function Contact() {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
-  console.log("Web App URL:", WEB_APP_URL);
-  console.log("Secret Key:", SECRET_KEY);
+console.log("Web App URL:", WEB_APP_URL);
+console.log("Secret Key:", SECRET_KEY);
+
+
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     setLoading(true);
 
     try {
-      // ---------------------------
-      // 수정 부분: preflight 회피를 위해 URLSearchParams 사용
-      const formParams = new URLSearchParams();
-      formParams.append("name", formData.name);
-      formParams.append("email", formData.email);
-      formParams.append("message", formData.message);
-      formParams.append("secretKey", SECRET_KEY);
-
       const response = await fetch(WEB_APP_URL, {
         method: "POST",
         headers: {
-          "Content-Type": "application/x-www-form-urlencoded" // 수정됨
+          "Content-Type": "application/json"
         },
-        body: formParams.toString() // 수정됨
+        body: JSON.stringify({
+          ...formData,
+          secretKey: SECRET_KEY
+        })
       });
-      // ---------------------------
 
       const data = await response.json();
       if (data.status === "success") {
@@ -109,6 +105,5 @@ export default function Contact() {
     </div>
   );
 }
-
 
 
