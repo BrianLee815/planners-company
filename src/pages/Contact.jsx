@@ -8,6 +8,9 @@ export default function Contact() {
   });
   const [loading, setLoading] = useState(false);
 
+  const WEB_APP_URL = import.meta.env.VITE_CONTACT_WEB_APP_URL;
+  const SECRET_KEY = import.meta.env.VITE_CONTACT_SECRET_KEY;
+
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
@@ -17,14 +20,14 @@ export default function Contact() {
     setLoading(true);
 
     try {
-      const response = await fetch("https://script.google.com/macros/s/AKfycbyE-EDq84XtirRzsCQolxK1pW4rnqnmbRu0Y1i9hfpP5nCOdwPktjWQxrFrjRKvUKtg/exec", { // 배포한 Web App URL
+      const response = await fetch(WEB_APP_URL, {
         method: "POST",
         headers: {
           "Content-Type": "application/json"
         },
         body: JSON.stringify({
           ...formData,
-          secretKey: "planners2023#" // 🔒 인증용 secretKey 포함
+          secretKey: SECRET_KEY
         })
       });
 
@@ -97,4 +100,5 @@ export default function Contact() {
     </div>
   );
 }
+
 
