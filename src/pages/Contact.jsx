@@ -5,14 +5,13 @@ export default function Contact() {
   const [loading, setLoading] = useState(false);
 
   // Google Form 제출 URL
-  const WEB_FORM_URL =
-    "https://docs.google.com/forms/d/e/1FAIpQLSd7ZqKAvJBaGlSGVPKykrvjEj9SZnFcghg_UhIRQ1ScuItRCA/formResponse";
+  const WEB_FORM_URL = import.meta.env.VITE_CONTACT_WEB_FORM_URL;
 
   // Google Form 질문 entry ID
   const ENTRY_IDS = {
-    name: "entry.841785272",
-    email: "entry.1947142295",
-    message: "entry.1543102402",
+    name: import.meta.env.VITE_CONTACT_ENTRY_NAME,
+    email: import.meta.env.VITE_CONTACT_ENTRY_EMAIL,
+    message: import.meta.env.VITE_CONTACT_ENTRY_MESSAGE,
   };
 
   const handleChange = (e) => {
