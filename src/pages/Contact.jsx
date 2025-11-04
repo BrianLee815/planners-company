@@ -17,14 +17,14 @@ export default function Contact() {
     setLoading(true);
 
     try {
-      const response = await fetch("YOUR_WEB_APP_URL", { // 배포한 Web App URL
+      const response = await fetch("https://script.google.com/macros/s/AKfycbyE-EDq84XtirRzsCQolxK1pW4rnqnmbRu0Y1i9hfpP5nCOdwPktjWQxrFrjRKvUKtg/exec", { // 배포한 Web App URL
         method: "POST",
         headers: {
           "Content-Type": "application/json"
         },
         body: JSON.stringify({
           ...formData,
-          secretKey: "MY_SECRET_KEY" // 🔒 인증용 secretKey 포함
+          secretKey: "planners2023#" // 🔒 인증용 secretKey 포함
         })
       });
 
