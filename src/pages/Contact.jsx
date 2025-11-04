@@ -1,61 +1,53 @@
 import { useState } from "react";
 
 export default function Contact() {
-  const [formData, setFormData] = useState({
-    name: "",
-    email: "",
-    message: ""
-  });
+  const [formData, setFormData] = useState({ name: "", email: "", message: "" });
   const [loading, setLoading] = useState(false);
 
-  const WEB_APP_URL = import.meta.env.VITE_CONTACT_WEB_APP_URL;
-  const SECRET_KEY = import.meta.env.VITE_CONTACT_SECRET_KEY;
+  // Google Form 제출 URL
+  const WEB_FORM_URL = "https://docs.google.com/forms/d/e/1FAIpQLSf1234567890abcdefg/formResponse";
+
+  // Google Form 질문 entry ID
+  const ENTRY_IDS = {
+    name: "entry.841785272",
+    email: "entry.1947142295",
+    message: "entry.1543102402"
+  };
 
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
-console.log("Web App URL:", WEB_APP_URL);
-console.log("Secret Key:", SECRET_KEY);
-
-
-
-  const handleSubmit = async (e) => {
+  const handleSubmit = (e) => {
     e.preventDefault();
     setLoading(true);
 
-    try {
-      const response = await fetch(WEB_APP_URL, {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json"
-        },
-        body: JSON.stringify({
-          ...formData,
-          secretKey: SECRET_KEY
-        })
-      });
+    // hidden form 생성
+    const form = document.createElement("form");
+    form.action = WEB_FORM_URL;
+    form.method = "POST";
+    form.target = "_blank"; // 새 탭에서 열기
 
-      const data = await response.json();
-      if (data.status === "success") {
-        alert("문의가 제출되었습니다!");
-        setFormData({ name: "", email: "", message: "" });
-      } else {
-        alert(`오류 발생: ${data.message}`);
-      }
-    } catch (err) {
-      console.error(err);
-      alert("문의 제출 실패");
-    } finally {
-      setLoading(false);
-    }
+    Object.keys(formData).forEach((key) => {
+      const input = document.createElement("input");
+      input.type = "hidden";
+      input.name = ENTRY_IDS[key];
+      input.value = formData[key];
+      form.appendChild(input);
+    });
+
+    document.body.appendChild(form);
+    form.submit();
+    document.body.removeChild(form);
+
+    alert("문의가 제출되었습니다!");
+    setFormData({ name: "", email: "", message: "" });
+    setLoading(false);
   };
 
   return (
     <div className="pt-32 max-w-3xl mx-auto px-6 text-gray-200">
-      <h1 className="text-3xl font-serif font-bold text-primary mb-8 text-center">
-        문의하기
-      </h1>
+      <h1 className="text-3xl font-serif font-bold text-primary mb-8 text-center">문의하기</h1>
 
       <form onSubmit={handleSubmit} className="space-y-6">
         <div>
@@ -105,5 +97,4 @@ console.log("Secret Key:", SECRET_KEY);
     </div>
   );
 }
-
 
