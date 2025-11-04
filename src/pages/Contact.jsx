@@ -15,6 +15,11 @@ export default function Contact() {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
+console.log("Web App URL:", WEB_APP_URL);
+console.log("Secret Key:", SECRET_KEY);
+
+
+
   const handleSubmit = async (e) => {
     e.preventDefault();
     setLoading(true);
