@@ -24,8 +24,8 @@ export default function Home() {
       {/* Hero Section */}
       <section
   className="pt-10 h-screen flex items-center justify-center text-center px-6
-             bg-[url('/images/hero-bg.jpg')] bg-cover bg-center
-             bg-gradient-to-b from-primary/80 to-[#0F4C75]/90 bg-blend-overlay text-white"
+             bg-cover bg-center bg-gradient-to-b from-primary/80 to-[#0F4C75]/90 bg-blend-overlay text-white"
+  style={{ backgroundImage: "url('/images/hero-bg.jpg')" }}
 >
   <motion.div
     initial={{ opacity: 0, y: -50 }}
@@ -41,6 +41,7 @@ export default function Home() {
     </p>
   </motion.div>
 </section>
+
 
 
 
