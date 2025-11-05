@@ -44,11 +44,11 @@ export default function Services() {
   ];
 
   return (
-    <div className="pt-32 max-w-6xl mx-auto px-6 bg-gray-200 text-black">
+    <div className="pt-32 max-w-6xl mx-auto px-6 bg-gray-200 text-black font-sans">
 
       {/* HERO */}
       <section className="text-center mb-20">
-        <h1 className="text-4xl font-serif font-bold text-primary mb-6">
+        <h1 className="text-4xl font-bold text-primary mb-6">
           서비스 분야
         </h1>
         <p className="max-w-3xl mx-auto leading-relaxed">
@@ -66,7 +66,7 @@ export default function Services() {
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.4, delay: i * 0.1 }}
             viewport={{ once: true }}
-            className="bg-white border border-gray-200 p-10 rounded-xl shadow-sm hover:shadow-md transition text-center"
+            className="bg-white border border-gray-200 p-10 rounded-xl shadow-md hover:shadow-lg transition text-center"
           >
             <div className="mb-4 flex justify-center">{f.icon}</div>
             <h3 className="text-lg font-semibold mb-2">{f.title}</h3>
@@ -77,7 +77,7 @@ export default function Services() {
 
       {/* PROCESS */}
       <section className="mb-28">
-        <h2 className="text-3xl font-serif font-bold text-primary text-center mb-16">
+        <h2 className="text-3xl font-bold text-primary text-center mb-16">
           행사 기획 및 운영 프로세스
         </h2>
 
@@ -89,7 +89,7 @@ export default function Services() {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.45, delay: index * 0.12 }}
               viewport={{ once: true }}
-              className="text-center border border-gray-200 bg-white p-8 rounded-xl shadow-sm hover:shadow-md transition"
+              className="text-center border border-gray-200 bg-white p-8 rounded-xl shadow-md hover:shadow-lg transition"
             >
               <div className="mx-auto mb-4">{step.icon}</div>
               <h3 className="font-semibold text-lg mb-2">{step.title}</h3>
@@ -105,7 +105,7 @@ export default function Services() {
           href="/contact"
           className="inline-block px-8 py-3 border border-primary text-primary rounded-full hover:bg-primary hover:text-white transition"
         >
-          문의하기
+          문의 상담하기
         </a>
       </section>
     </div>

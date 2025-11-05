@@ -27,12 +27,14 @@ export default function Home() {
              bg-cover bg-center bg-gradient-to-b from-black/60 to-black/80 bg-blend-overlay text-white"
   style={{ backgroundImage: "url('/images/hero-bg.jpg')" }}
 >
+    <div className="absolute inset-0 bg-black/10"></div>
+
   <motion.div
     initial={{ opacity: 0, y: -50 }}
     animate={{ opacity: 1, y: 0 }}
     transition={{ duration: 1 }}
   >
-    <h2 className="text-5xl md:text-6xl font-serif font-bold mb-6 drop-shadow-lg">
+    <h2 className="text-5xl md:text-6xl font-serif font-bold mb-12 drop-shadow-lg">
       국제회의 · 포럼 · 전시/박람회 · 시상식
     </h2>
     <p className="text-lg md:text-xl font-light tracking-wide max-w-2xl mx-auto drop-shadow-md">

@@ -1,8 +1,10 @@
 export default function About() {
   return (
-    <div className="pt-32 max-w-6xl mx-auto px-6 bg-gray-200 text-black leading-relaxed">
+    <div className="pt-32 max-w-6xl mx-auto px-6 bg-gray-200 text-black leading-relaxed font-sans">
 
-      <h1 className="text-4xl font-serif font-bold text-primary mb-12 text-center">회사소개</h1>
+      <h1 className="text-4xl font-bold text-primary mb-12 text-center">
+        회사소개
+      </h1>
 
       {/* 회사 소개 */}
       <section className="mb-20 text-center">
@@ -16,7 +18,7 @@ export default function About() {
 
       {/* 조직 구성 */}
       <section className="mb-20 text-center">
-        <h2 className="text-2xl font-serif font-bold text-primary mb-12">조직 구성</h2>
+        <h2 className="text-2xl font-bold text-primary mb-12">조직 구성</h2>
 
         <div className="h-2"></div> 
 
@@ -24,7 +26,7 @@ export default function About() {
           {/* Team Leader */}
           <svg className="w-8 h-8 mx-auto mb-4 text-primary" fill="none" stroke="currentColor" strokeWidth="1.8" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><circle cx="12" cy="7" r="4"/><path d="M4 21c0-4 4-7 8-7s8 3 8 7"/></svg>
           <div className="bg-white border border-gray-400 p-8 rounded-xl shadow-sm hover:shadow-md transition">
-            <h3 className="text-xl font-semibold mb-2">{`정형진`}</h3>
+            <h3 className="text-xl font-semibold mb-2">정형진</h3>
             <p className="text-sm font-medium text-primary mb-3">전략기획팀 팀장</p>
             <p className="text-sm leading-relaxed">행사 기획 및 총괄 운영 책임</p>
           </div>
@@ -40,7 +42,7 @@ export default function About() {
             <h3 className="text-xl font-semibold mb-2">전략기획팀 팀원</h3>
             <p className="text-sm leading-relaxed">행사 운영 / 현장 관리 / 기획 지원</p>
           </div>
-
+         
           <div className="bg-white border border-gray-400 p-8 rounded-xl shadow-sm hover:shadow-md transition">
             <h3 className="text-xl font-semibold mb-2">조서영</h3>
             <p className="text-sm leading-relaxed">행사 운영 / 현장 관리 / 기획 지원</p>
@@ -55,7 +57,7 @@ export default function About() {
 
       {/* 연혁 */}
       <section className="pb-32">
-        <h2 className="text-2xl font-serif font-bold text-primary mb-8">연혁</h2>
+        <h2 className="text-2xl font-bold text-primary mb-8">연혁</h2>
         <ul className="space-y-4 text-sm">
           <li>2023 · 플래너스 컴퍼니 설립</li>
           <li>2024 · 공공기관 포럼 및 시상식 운영 프로젝트 다수 수행</li>
@@ -65,5 +67,6 @@ export default function About() {
     </div>
   );
 }
+
 
 

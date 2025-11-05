@@ -28,30 +28,31 @@ const projects = [
 export default function Projects() {
   return (
     <div className="pt-32 max-w-6xl mx-auto px-6">
-      <h1 className="text-4xl font-serif font-bold text-primary mb-12 text-center">
-        프로젝트
-      </h1>
+  <h1 className="text-4xl font-bold text-primary mb-12 text-center font-sans">
+    프로젝트
+  </h1>
 
-      <div className="grid md:grid-cols-3 gap-8">
-        {projects.map((p, i) => (
-          <motion.div
-            key={i}
-            className="border border-gray-700 p-8 bg-gray-800 rounded-xl shadow-sm hover:shadow-lg transition-shadow duration-300 ease-in-out"
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-          >
-            <p className="text-sm text-gray-400 mb-2">{p.year}</p>
-            <h3 className="text-lg font-semibold mb-3 text-white flex items-center">
-              <p.icon className="w-5 h-5 mr-2 text-primary" />
-              {p.name}
-            </h3>
-            <p className="text-sm text-primary font-medium mb-2">{p.role}</p>
-            <p className="text-sm text-gray-300">{p.scale}</p>
-          </motion.div>
-        ))}
-      </div>
-    </div>
+  <div className="grid md:grid-cols-3 gap-8">
+    {projects.map((p, i) => (
+      <motion.div
+        key={i}
+        className="border border-gray-700 p-8 bg-gray-800 rounded-xl shadow-sm hover:shadow-lg transition-shadow duration-300 ease-in-out"
+        initial={{ opacity: 0, y: 20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+      >
+        <p className="text-sm text-gray-400 mb-2 font-sans">{p.year}</p>
+        <h3 className="text-lg font-semibold mb-3 text-white flex items-center font-sans">
+          <p.icon className="w-5 h-5 mr-2 text-primary" />
+          {p.name}
+        </h3>
+        <p className="text-sm text-primary font-medium mb-2 font-sans">{p.role}</p>
+        <p className="text-sm text-gray-300 font-sans">{p.scale}</p>
+      </motion.div>
+    ))}
+  </div>
+</div>
+
   );
 }
 
