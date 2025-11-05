@@ -11,7 +11,7 @@ export default {
         serif: ["Playfair Display", "serif"],
       },
       colors: {
-        primary: "#48a6e9ff",   // 깊은 푸른
+        primary: "#1b90e4ff",   // 깊은 푸른
         accent: "#28c3d8ff",    // 포인트 민트블루
         dark: {
           DEFAULT: "#1A1A1A",  // 전체 배경용 검정

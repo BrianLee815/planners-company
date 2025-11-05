@@ -15,7 +15,7 @@ export default function Navbar() {
 
           {/* 가운데 메뉴 */}
           <nav className="flex gap-6 text-sm font-medium text-gray-100">
-            <a href="/services" className="hover:text-primary transition">사업분야</a>
+            <a href="/services" className="hover:text-primary transition">서비스분야</a>
             <a href="/projects" className="hover:text-primary transition">포트폴리오</a>
             <a href="/about" className="hover:text-primary transition">회사소개</a>
           </nav>

@@ -22,9 +22,9 @@ export default function Home() {
   return (
     <div className="pt-5">
       {/* Hero Section */}
-      <section
+<section
   className="pt-10 h-screen flex items-center justify-center text-center px-6
-             bg-cover bg-center bg-gradient-to-b from-primary/80 to-[#0F4C75]/90 bg-blend-overlay text-white"
+             bg-cover bg-center bg-gradient-to-b from-black/60 to-black/80 bg-blend-overlay text-white"
   style={{ backgroundImage: "url('/images/hero-bg.jpg')" }}
 >
   <motion.div
@@ -32,15 +32,16 @@ export default function Home() {
     animate={{ opacity: 1, y: 0 }}
     transition={{ duration: 1 }}
   >
-    <h2 className="text-5xl md:text-6xl font-serif font-bold mb-6">
+    <h2 className="text-5xl md:text-6xl font-serif font-bold mb-6 drop-shadow-lg">
       국제회의 · 포럼 · 전시/박람회 · 시상식
     </h2>
-    <p className="text-lg md:text-xl font-light tracking-wide max-w-2xl mx-auto">
+    <p className="text-lg md:text-xl font-light tracking-wide max-w-2xl mx-auto drop-shadow-md">
       플래너스 컴퍼니는 전문성과 창의성을 바탕으로  
       품격 있는 행사 경험을 제공합니다.
     </p>
   </motion.div>
 </section>
+
 
 
 
