@@ -8,7 +8,7 @@ export default function About() {
 
       {/* 회사 소개 */}
       <section className="mb-20 text-center">
-        <p className="text-lg max-w-3xl mx-auto">
+        <p className="text-lg md:max-w-3xl mx-auto">
           플래너스 컴퍼니는 국제회의, 포럼, 박람회, 어워즈 등 다양한 컨벤션 행사를 
           전문적으로 기획·운영하는 기업입니다. 
           우리는 품격 있는 행사 경험과 완성도 높은 운영을 통해 
@@ -22,7 +22,7 @@ export default function About() {
 
         <div className="h-2"></div> 
 
-        <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+        <div className="grid md:grid-cols-2 gap-8 md:max-w-4xl mx-auto">
           {/* Team Leader */}
           <svg className="w-8 h-8 mx-auto mb-4 text-primary mt-12" fill="none" stroke="currentColor" strokeWidth="1.8" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><circle cx="12" cy="7" r="4"/><path d="M4 21c0-4 4-7 8-7s8 3 8 7"/></svg>
           <div className="bg-white border border-gray-400 p-8 rounded-xl shadow-sm hover:shadow-md transition">
@@ -82,7 +82,7 @@ export default function About() {
     오시는 길
   </h2>
 
-  <div className="max-w-5xl mx-auto grid md:grid-cols-2 gap-10 items-center">
+  <div className="md:max-w-5xl mx-auto grid md:grid-cols-2 gap-10 items-center">
 
     {/* 지도 */}
     <div className="w-full h-[350px] rounded-xl overflow-hidden shadow-md">
