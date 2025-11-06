@@ -2,7 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-
 /* 기본 body 스타일 */
 body {
   background-color: #1A1A1A;
@@ -11,12 +10,18 @@ body {
   min-height: 100vh;
 }
 
-
 /* #root 전체 스타일 */
 #root {
   @apply max-w-[1280px] mx-auto p-8 text-center;
   background-color: inherit;
   color: inherit;
+}
+
+/* ✅ 모바일에서 좌우 패딩과 max-width 제거 */
+@media (max-width: 768px) {
+  #root {
+    @apply max-w-full p-4 text-left; /* ✅ 수정: 전체폭 사용 + 여백 줄임 */
+  }
 }
 
 /* 카드 */
@@ -72,10 +77,11 @@ input, textarea, select {
   }
 }
 
-
+/* ✅ 여기 부분이 문제였음 → 배경색이 흰색으로 덮여 있었음 */
 html, body {
   width: 100%;
   max-width: 100%;
   overflow-x: hidden;
-  background: #ffffff;
+  background: #1A1A1A; /* ✅ 수정: 기존 #ffffff → 사이트 전체 배경과 동일하게 */
 }
+
