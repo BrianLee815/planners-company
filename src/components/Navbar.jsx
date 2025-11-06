@@ -40,10 +40,10 @@ export default function Navbar() {
         </div>
       </div>
 
-      {/* 모바일 슬라이드 메뉴 (왼쪽 → 오른쪽) */}
+      {/* 모바일 슬라이드 메뉴 (오른쪽 → 왼쪽) */}
       <div
-        className={`fixed top-0 left-0 h-full w-64 bg-white shadow-xl transform transition-transform duration-300 z-50 ${
-          open ? "translate-x-0" : "-translate-x-full"
+        className={`fixed top-0 right-0 h-full w-64 bg-white shadow-xl transform transition-transform duration-300 z-50 ${
+          open ? "translate-x-0" : "translate-x-full"
         }`}
       >
         <div className="p-6 flex flex-col gap-6 text-gray-800 text-sm font-medium">
@@ -66,7 +66,7 @@ export default function Navbar() {
         </div>
       </div>
 
-      {/* 오버레이 (메뉴 열릴 때 클릭 시 닫힘) */}
+      {/* 오버레이 */}
       {open && (
         <div
           className="fixed inset-0 bg-black/40 backdrop-blur-sm z-40"
@@ -76,6 +76,7 @@ export default function Navbar() {
     </header>
   );
 }
+
 
 
 
