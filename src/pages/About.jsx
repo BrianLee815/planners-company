@@ -71,7 +71,7 @@ export default function About() {
       {/* 연혁 */}
       <section className="pb-32">
         <h2 className="text-2xl font-bold text-center text-primary mb-8">연혁</h2>
-        <ul className="space-y-4 text-sm">
+        <ul className="space-y-4 text-sm text-center">
           <li>2023 · 플래너스 컴퍼니 설립</li>
           <li>2024 · 공공기관 포럼 및 시상식 운영 프로젝트 다수 수행</li>
           <li>2025 · 국내 주요 박람회 및 국제회의 기획 / 실행</li>
