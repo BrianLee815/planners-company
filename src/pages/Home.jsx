@@ -200,13 +200,15 @@ export default function Home() {
     ))}
   </div>
 </section>
+
 <section className="py-24 bg-white">
   <h2 className="text-3xl font-bold text-center text-gray-900 mb-12">
-    Our Partners
+    ✨ Our Partners
   </h2>
 
-  <div className="max-w-5xl mx-auto grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+  <div className="max-w-4xl mx-auto grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
     {[
+      // ... 회사 목록
       "Samsung",
       "LG",
       "Hyundai Motor Group",
@@ -219,20 +221,32 @@ export default function Home() {
       "Doosan",
       "Shinhan Bank",
       "KB Kookmin Bank",
+      // ...
     ].map((company, idx) => (
+      // 기존 박스 디자인을 입체적으로 변경
       <div
         key={idx}
-        className="border border-gray-300 rounded-xl px-4 py-6 text-center text-gray-700 text-sm font-medium bg-white shadow-sm hover:shadow-md hover:border-gray-500 transition cursor-default"
+        // 배경을 밝은 흰색으로 유지하고, 그림자를 강하게 줍니다.
+        className="p-6 bg-white rounded-2xl flex flex-col items-center justify-center space-y-3 
+                   shadow-xl ring-1 ring-gray-100 
+                   
+                   /* 호버 효과로 입체감 극대화 */
+                   hover:shadow-2xl 
+                   hover:translate-y-[-4px] 
+                   hover:scale-[1.02]
+                   transition-all duration-300 ease-in-out cursor-pointer"
       >
-        {company}
-      </div>
+        <div className="w-16 h-16 mb-2">
+           </div>
+
+        <p className="text-lg font-semibold text-gray-800 text-center">
+          {company}
+        </p>
+        
+        </div>
     ))}
   </div>
 </section>
-
-
-
-
 
     </div>
   );
