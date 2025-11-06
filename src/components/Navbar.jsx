@@ -52,9 +52,9 @@ export default function Navbar() {
             ✕
           </button>
 
-          <a href="/services" onClick={() => setOpen(false)}>서비스분야</a>
-          <a href="/projects" onClick={() => setOpen(false)}>포트폴리오</a>
-          <a href="/about" onClick={() => setOpen(false)}>회사소개</a>
+          <a href="/services" className="text-black hover:text-gray-700 transition" onClick={() => setOpen(false)}>서비스분야</a>
+          <a href="/projects" className="text-black hover:text-gray-700 transition" onClick={() => setOpen(false)}>포트폴리오</a>
+          <a href="/about" className="text-black hover:text-gray-700 transition" onClick={() => setOpen(false)}>회사소개</a>
 
           <a
             href="/contact"
