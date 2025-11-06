@@ -1,82 +1,39 @@
-import { useState } from "react";
 import { Link } from "react-router-dom";
 
 export default function Navbar() {
-  const [open, setOpen] = useState(false);
-
   return (
-    <header className="fixed top-0 left-0 w-full bg-transparent backdrop-blur-lg shadow-sm z-50 border-b border-gray-200 transition-all">
-
+    <header className="fixed top-0 left-0 w-full bg-white/70 backdrop-blur-lg shadow-sm z-50 border-b border-gray-200">
       <div className="w-full px-4 sm:px-6 py-4 flex justify-between items-center">
+
         {/* 로고 */}
-        <a
-          href="/"
-          className="font-serif text-2xl font-bold text-primary tracking-tight hover:text-primary transition"
-        >
+        <a href="/" className="font-serif text-2xl font-bold text-primary tracking-tight hover:text-primary transition">
           Planners Company
         </a>
 
-        {/* 햄버거 버튼 (모바일) */}
-        <button
-          className="sm:hidden text-3xl text-gray-800"
-          onClick={() => setOpen(true)}
-        >
-          ☰
-        </button>
+        {/* 메뉴 + 문의하기 */}
+        <div className="flex items-center gap-6">
 
-        {/* 데스크탑 메뉴 */}
-        <div className="hidden sm:flex items-center gap-10">
-          <nav className="flex gap-6 text-sm font-medium">
+          {/* 메뉴 */}
+          <nav className="flex flex-wrap gap-3 text-[14px] font-medium sm:gap-6 sm:text-sm">
             <a href="/services" className="text-gray-700 hover:text-primary transition">서비스분야</a>
             <a href="/projects" className="text-gray-700 hover:text-primary transition">포트폴리오</a>
             <a href="/about" className="text-gray-700 hover:text-primary transition">회사소개</a>
           </nav>
 
+          {/* 문의하기 버튼 */}
           <a
             href="/contact"
-            className="px-4 py-2 rounded-full bg-primary/10 text-primary border border-primary hover:bg-primary hover:text-white transition-colors"
+            className="px-3 py-2 rounded-full bg-primary/10 text-primary border border-primary hover:bg-primary hover:text-white transition-colors text-sm sm:text-base"
           >
             문의하기
           </a>
+
         </div>
       </div>
-
-      {/* 모바일 슬라이드 메뉴 (오른쪽 → 왼쪽) */}
-      <div
-        className={`fixed top-0 right-0 h-full w-64 bg-white shadow-xl transform transition-transform duration-300 z-50 ${
-          open ? "translate-x-0" : "translate-x-full"
-        }`}
-      >
-        <div className="p-6 flex flex-col gap-6 text-gray-800 text-sm font-medium">
-          {/* 닫기 버튼 */}
-          <button className="text-2xl mb-4 self-end" onClick={() => setOpen(false)}>
-            ✕
-          </button>
-
-          <a href="/services" className="text-black hover:text-gray-700 transition" onClick={() => setOpen(false)}>서비스분야</a>
-          <a href="/projects" className="text-black hover:text-gray-700 transition" onClick={() => setOpen(false)}>포트폴리오</a>
-          <a href="/about" className="text-black hover:text-gray-700 transition" onClick={() => setOpen(false)}>회사소개</a>
-
-          <a
-            href="/contact"
-            className="mt-6 px-4 py-2 rounded-full bg-primary/10 text-primary border border-primary hover:bg-primary hover:text-white transition-colors text-center"
-            onClick={() => setOpen(false)}
-          >
-            문의하기
-          </a>
-        </div>
-      </div>
-
-      {/* 오버레이 */}
-      {open && (
-        <div
-          className="fixed inset-0 bg-black/40 backdrop-blur-sm z-40"
-          onClick={() => setOpen(false)}
-        />
-      )}
     </header>
   );
 }
+
 
 
 
