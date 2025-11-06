@@ -100,37 +100,33 @@ export default function About() {
 
 
     {/* 정보 */}
-    <div>
-      {/* <p className="text-lg font-semibold text-gray-800 mb-2">플래너스 컴퍼니</p>
-      <p className="text-gray-700 mb-4">
-        서울특별시 중구 태평로 1가 (예시 주소)  
-      </p> */}
+<div>
+  <div>
+    <h3 className="text-xl font-semibold text-gray-900 mb-4">대중교통 안내</h3>
 
-      <div>
-        <h3 className="text-xl font-semibold text-gray-900 mb-4">대중교통 안내</h3>
+    <ul className="space-y-4 text-gray-700 leading-relaxed">
+      <li>
+        <span className="font-medium text-primary">지하철</span><br/>
+        • <b>3호선 <span className="font-semibold">남부터미널역</span></b> 3번 출구 도보 8분
+      </li>
 
-        <ul className="space-y-4 text-gray-700 leading-relaxed">
-          <li>
-            <span className="font-medium text-primary">지하철</span><br/>
-            • <b>3호선 <span className="font-semibold">남부터미널역</span></b> 3번 출구 도보 8분
-          </li>
+      <li>
+        <span className="font-medium text-primary">버스</span><br/>
+        • <b>국제전자센터 정류장</b> 하차 (도보 5분)<br/>
+        <span className="text-sm text-gray-600">
+          간선: 461, 641 &nbsp;|&nbsp; 지선: 3420, 4319
+        </span>
+      </li>
 
-          <li>
-            <span className="font-medium text-primary">버스</span><br/>
-            • <b>국제전자센터 정류장</b> 하차 (도보 5분)<br/>
-            <span className="text-sm text-gray-600">
-              간선: 461, 641 &nbsp;|&nbsp; 지선: 3420, 4319
-            </span>
-          </li>
+      <li>
+        <span className="font-medium text-primary">택시/차량</span><br/>
+        서울 서초구 서초중앙로2길 35 돈일빌딩 210호<br/>
+        <span className="text-sm text-gray-500">(주차 공간 협의 필요 시 문의 바랍니다.)</span>
+      </li>
+    </ul>
+  </div>
+</div>
 
-          <li>
-            <span className="font-medium text-primary">택시/차량</span><br/>
-            서울 서초구 서초중앙로2길 35 돈일빌딩 210호<br/>
-            <span className="text-sm text-gray-500">(주차 공간 협의 필요 시 문의 바랍니다.)</span>
-          </li>
-        </ul>
-      </div>
-    </div>
 
   </div>
 </section>

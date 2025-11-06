@@ -40,7 +40,7 @@ export default function Home() {
         className="pt-10 h-screen flex items-center justify-center text-center px-6 bg-cover bg-center relative"
         style={{ backgroundImage: "url('/images/hero-bg.jpg')" }}
       >
-        <div className="absolute inset-0 bg-white/70 backdrop-blur-sm"></div>
+        <div className="absolute inset-0 bg-white/10 backdrop-blur-sm"></div>
 
         <motion.div
           className="relative z-10"
@@ -48,10 +48,10 @@ export default function Home() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1 }}
         >
-          <h2 className="text-5xl md:text-6xl font-serif font-bold mb-8 text-gray-900">
+          <h2 className="text-5xl md:text-6xl font-serif font-bold mb-8 text-gray-100">
             국제회의 · 포럼 · 전시/박람회 · 시상식
           </h2>
-          <p className="text-lg md:text-xl font-light tracking-wide max-w-2xl mx-auto text-gray-700">
+          <p className="text-lg md:text-xl font-light tracking-wide max-w-2xl mx-auto text-gray-100">
             플래너스 컴퍼니는 전문성과 창의성을 바탕으로 품격 있는 행사 경험을 제공합니다.
           </p>
         </motion.div>
@@ -88,7 +88,7 @@ export default function Home() {
 <section className="py-28 bg-white text-gray-800">
   <div className="max-w-6xl mx-auto px-6">
 
-    <h2 className="text-3xl md:text-4xl font-serif font-bold text-center mb-16 text-gray-900">
+    <h2 className="text-3xl md:text-4xl font-serif font-bold text-center mb-16 text-gray-700">
       인증 및 공식 등록 현황
     </h2>
 
@@ -121,7 +121,7 @@ export default function Home() {
     <div className="grid md:grid-cols-2 gap-12 text-gray-700 text-sm leading-relaxed">
 
       <div>
-        <h3 className="font-semibold text-lg text-gray-900 mb-4">공식 등록 및 인증</h3>
+        <h3 className="font-semibold text-lg text-gray-700 mb-4">공식 등록 및 인증</h3>
         <ul className="space-y-2 list-disc pl-5">
           <li>행사대행업 공식 등록 (서울시 / 공공기관 대상)</li>
           <li>나라장터 입찰 등록 기업 (조달청)</li>
@@ -130,7 +130,7 @@ export default function Home() {
       </div>
 
       <div>
-        <h3 className="font-semibold text-lg text-gray-900 mb-4">주요 협력 및 운영 이력</h3>
+        <h3 className="font-semibold text-lg text-gray-700 mb-4">주요 협력 및 운영 이력</h3>
         <ul className="space-y-2 list-disc pl-5">
           <li>중앙정부 및 지자체 정책 포럼 운영</li>
           <li>국제 전시 / 산업 박람회 PM & 운영 진행</li>
@@ -142,7 +142,7 @@ export default function Home() {
   </div>
 </section>
 <section className="mb-32">
-  <h2 className="text-3xl font-bold text-gray-900 text-center mb-16">
+  <h2 className="text-3xl font-bold text-gray-700 text-center mb-16">
     Overseas Exhibition
   </h2>
 

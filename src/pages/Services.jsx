@@ -48,7 +48,7 @@ export default function Services() {
 
       {/* HERO */}
       <section className="text-center mb-20">
-        <h1 className="text-4xl font-bold text-primary mb-6">
+        <h1 className="text-4xl font-bold text-gray-700 mb-6">
           서비스 분야
         </h1>
         <p className="max-w-3xl mx-auto leading-relaxed">
@@ -77,7 +77,7 @@ export default function Services() {
 
       {/* PROCESS */}
       <section className="mb-28">
-        <h2 className="text-3xl font-bold text-primary text-center mb-16">
+        <h2 className="text-3xl font-bold text-gray-700 text-center mb-16">
           행사 기획 및 운영 프로세스
         </h2>
 
