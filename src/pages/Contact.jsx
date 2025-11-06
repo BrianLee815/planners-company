@@ -46,7 +46,7 @@ export default function Contact() {
   };
 
   return (
-    <div className="pt-32 max-w-3xl mx-auto px-6 text-gray-200">
+    <div className="pt-32 max-w-3xl mx-auto px-6 text-gray-700">
       <h1 className="text-3xl font-serif font-bold text-primary mb-8 text-center">문의하기</h1>
 
       <form onSubmit={handleSubmit} className="space-y-6">
@@ -58,7 +58,7 @@ export default function Contact() {
             value={formData.name}
             onChange={handleChange}
             required
-            className="w-full border border-gray-300 rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-accent"
+            className="w-full bg-gray-100 text-gray-900 border border-gray-300 rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-accent"
           />
         </div>
 
@@ -70,7 +70,7 @@ export default function Contact() {
             value={formData.email}
             onChange={handleChange}
             required
-            className="w-full border border-gray-300 rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-accent"
+            className="w-full bg-gray-100 text-gray-900 border border-gray-300 rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-accent"
           />
         </div>
 
@@ -82,7 +82,7 @@ export default function Contact() {
             onChange={handleChange}
             required
             rows={5}
-            className="w-full border border-gray-300 rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-accent"
+            className="w-full bg-gray-100 text-gray-900 border border-gray-300 rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-accent"
           ></textarea>
         </div>
 
