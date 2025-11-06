@@ -10,7 +10,7 @@ import Services from "./pages/Services";
 export default function App() {
   return (
     <Router>
-      <div className="min-h-screen text-gray-900">
+      <div className="min-h-screen bg-white text-gray-800">
 
         {/* Navbar */}
         <Navbar />

@@ -29,7 +29,7 @@ export default function Projects() {
   return (
     <div className="pt-32 max-w-6xl mx-auto px-6">
   <h1 className="text-4xl font-bold text-primary mb-12 text-center font-sans">
-    프로젝트
+    portpolio
   </h1>
 
   <div className="grid md:grid-cols-3 gap-8">

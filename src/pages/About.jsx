@@ -77,6 +77,64 @@ export default function About() {
           <li>2025 · 국내 주요 박람회 및 국제회의 기획 / 실행</li>
         </ul>
       </section>
+      <section className="py-24 bg-gray-50">
+  <h2 className="text-3xl font-bold text-center text-primary mb-10">
+    오시는 길
+  </h2>
+
+  <div className="max-w-5xl mx-auto grid md:grid-cols-2 gap-10 items-center">
+
+    {/* 지도 */}
+    <div className="w-full h-[350px] rounded-xl overflow-hidden shadow-md">
+  <iframe
+    title="location"
+    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3166.013537166538!2d127.0160173952164!3d37.
+    48400691853165!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x357ca13e2fcf9dbb%3A0x41f2f5de65091fb
+    c!2z7ISc7Jq47Yq567OE7IucIOyEnOy0iOq1rCDshJzstIjspJHslZnroZwy6ri4IDM1!5e0!3m2!1sko!2skr!4v1762410876329!5m2!1sko!2skr"
+    className="w-full h-full border-0"
+    allowFullScreen=""
+    loading="lazy"
+    referrerPolicy="no-referrer-when-downgrade"
+  ></iframe>
+</div>
+
+
+    {/* 정보 */}
+    <div>
+      {/* <p className="text-lg font-semibold text-gray-800 mb-2">플래너스 컴퍼니</p>
+      <p className="text-gray-700 mb-4">
+        서울특별시 중구 태평로 1가 (예시 주소)  
+      </p> */}
+
+      <div>
+        <h3 className="text-xl font-semibold text-gray-900 mb-4">대중교통 안내</h3>
+
+        <ul className="space-y-4 text-gray-700 leading-relaxed">
+          <li>
+            <span className="font-medium text-primary">지하철</span><br/>
+            • <b>3호선 <span className="font-semibold">남부터미널역</span></b> 3번 출구 도보 8분
+          </li>
+
+          <li>
+            <span className="font-medium text-primary">버스</span><br/>
+            • <b>국제전자센터 정류장</b> 하차 (도보 5분)<br/>
+            <span className="text-sm text-gray-600">
+              간선: 461, 641 &nbsp;|&nbsp; 지선: 3420, 4319
+            </span>
+          </li>
+
+          <li>
+            <span className="font-medium text-primary">택시/차량</span><br/>
+            서울 서초구 서초중앙로2길 35 돈일빌딩 210호<br/>
+            <span className="text-sm text-gray-500">(주차 공간 협의 필요 시 문의 바랍니다.)</span>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+  </div>
+</section>
+
     </div>
   );
 }
