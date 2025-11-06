@@ -11,10 +11,10 @@ export default function Navbar() {
         </a>
 
         {/* 메뉴 + 문의하기 */}
-        <div className="flex items-center gap-10">
+        <div className="flex items-center gap-6">
 
           {/* 메뉴 */}
-          <nav className="flex gap-6 text-sm font-medium">
+          <nav className="flex flex-wrap gap-3 text-[14px] font-medium sm:gap-6 sm:text-sm">
             <a href="/services" className="text-gray-700 hover:text-primary transition">서비스분야</a>
             <a href="/projects" className="text-gray-700 hover:text-primary transition">포트폴리오</a>
             <a href="/about" className="text-gray-700 hover:text-primary transition">회사소개</a>
@@ -23,7 +23,7 @@ export default function Navbar() {
           {/* 문의하기 버튼 */}
           <a
             href="/contact"
-            className="px-4 py-2 rounded-full bg-primary/10 text-primary border border-primary hover:bg-primary hover:text-white transition-colors"
+            className="px-3 py-2 rounded-full bg-primary/10 text-primary border border-primary hover:bg-primary hover:text-white transition-colors text-sm sm:text-base"
           >
             문의하기
           </a>
@@ -33,6 +33,7 @@ export default function Navbar() {
     </header>
   );
 }
+
 
 
 
