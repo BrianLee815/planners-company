@@ -1,6 +1,6 @@
 export default function About() {
   return (
-    <div className="pt-32 w-full px-4 sm:px-6 bg-gray-200 text-black leading-relaxed font-sans">
+    <div className="pt-32 w-full px-4 sm:px-6 bg-white text-black leading-relaxed font-sans">
 
       <h1 className="text-4xl font-bold text-primary mb-12 text-center">
         회사소개
@@ -88,9 +88,7 @@ export default function About() {
     <div className="w-full h-[350px] rounded-xl overflow-hidden shadow-md">
   <iframe
     title="location"
-    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3166.013537166538!2d127.0160173952164!3d37.
-    48400691853165!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x357ca13e2fcf9dbb%3A0x41f2f5de65091fb
-    c!2z7ISc7Jq47Yq567OE7IucIOyEnOy0iOq1rCDshJzstIjspJHslZnroZwy6ri4IDM1!5e0!3m2!1sko!2skr!4v1762410876329!5m2!1sko!2skr"
+    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3166.013537166538!2d127.0160173952164!3d37.48400691853165!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x357ca13e2fcf9dbb%3A0x41f2f5de65091fbc!2z7ISc7Jq47Yq567OE7IucIOyEnOy0iOq1rCDshJzstIjspJHslZnroZwy6ri4IDM1!5e0!3m2!1sko!2skr!4v1762410876329!5m2!1sko!2skr"
     className="w-full h-full border-0"
     allowFullScreen=""
     loading="lazy"
