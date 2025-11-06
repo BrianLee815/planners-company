@@ -5,7 +5,11 @@ export default function Navbar() {
   const [open, setOpen] = useState(false);
 
   return (
-    <header className="fixed top-0 left-0 w-full bg-white/70 backdrop-blur-lg shadow-sm z-50 border-b border-gray-200">
+    <header
+  className={`fixed top-0 left-0 w-full transition-all backdrop-blur-lg shadow-sm z-50 border-b border-gray-200
+  ${open ? "bg-white" : "bg-white/30"}`}
+>
+
       <div className="w-full px-4 sm:px-6 py-4 flex justify-between items-center">
         {/* 로고 */}
         <a
