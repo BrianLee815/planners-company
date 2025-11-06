@@ -1,6 +1,6 @@
 export default function About() {
   return (
-    <div className="pt-32 w-full px-4 sm:px-6 bg-white text-black leading-relaxed font-sans">
+    <div className="pt-32 w-full px-4 sm:px-6 bg-white text-black leading-relaxed font-sans text-left">
 
       <h1 className="text-4xl font-bold text-primary mb-12 text-center">
         회사소개
