@@ -1,4 +1,3 @@
-import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import { Award, Landmark, Globe } from "lucide-react";
 
@@ -26,64 +25,59 @@ const projects = [
   },
 ];
 
+const images = [
+  "https://drive.google.com/uc?export=view&id=15fUg0hL_Cw1x6jfQgvKN52GHbSvbG8bO",
+  "https://drive.google.com/uc?export=view&id=1XxYzExample2",
+  "https://drive.google.com/uc?export=view&id=1XxYzExample3",
+  // 추가 이미지 URL
+];
+
 export default function Projects() {
-  const [images, setImages] = useState([]);
-
-  useEffect(() => {
-    fetch("https://script.google.com/macros/s/AKfycbypuxDmzART6S7eo0NvMq5RHNDmIgSm85TT0KCoregX9tlkCAflmPK8G-9MC8_kCpBY/exec") // ← 여기!! URL 붙여넣기
-      .then((res) => res.json())
-      .then((data) => setImages(data))
-      .catch((err) => console.log("이미지 불러오기 실패:", err));
-  }, []);
-
   return (
-    <div className="pt-32 max-w-6xl mx-auto px-6">
-      <h1 className="text-4xl font-bold text-gray-700 mb-12 text-center font-sans">
+    <div className="pt-16 max-w-6xl mx-auto px-4 sm:px-6">
+      <h1 className="text-4xl font-bold text-gray-700 mb-8 text-center">
         Portfolio
       </h1>
 
-      {/* 기존 프로젝트 카드 */}
-      <div className="grid md:grid-cols-3 gap-8 mb-20">
+      {/* Projects 카드 */}
+      <div className="grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6">
         {projects.map((p, i) => (
           <motion.div
             key={i}
-            className="relative overflow-hidden rounded-xl shadow-lg hover:shadow-2xl transition-shadow duration-300 ease-out bg-gradient-to-br from-white to-gray-100 p-8 cursor-pointer group"
+            className="relative overflow-hidden rounded-xl shadow-lg hover:shadow-2xl transition-shadow duration-300 ease-out bg-gradient-to-br from-white to-gray-100 p-6 cursor-pointer group"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
           >
-            <div className="absolute -top-5 right-5 w-14 h-14 flex items-center justify-center rounded-full bg-primary/20 text-primary text-2xl group-hover:scale-110 transition-transform duration-300">
-              <p.icon className="w-7 h-7" />
+            <div className="absolute -top-3 right-3 w-12 h-12 flex items-center justify-center rounded-full bg-primary/20 text-primary text-xl group-hover:scale-110 transition-transform duration-300">
+              <p.icon className="w-6 h-6" />
             </div>
 
-            <p className="text-sm text-gray-500 mb-2 font-sans">{p.year}</p>
-            <h3 className="text-lg font-semibold mb-3 text-gray-800 font-sans">{p.name}</h3>
-            <p className="text-sm text-primary font-medium mb-2 font-sans">{p.role}</p>
-            <div className="h-[1px] bg-gray-300 my-2"></div>
-            <p className="text-sm text-gray-700 font-sans">{p.scale}</p>
+            <p className="text-sm text-gray-500 mb-1">{p.year}</p>
+            <h3 className="text-lg font-semibold mb-2 text-gray-800">{p.name}</h3>
+            <p className="text-sm text-primary font-medium mb-1">{p.role}</p>
+            <div className="h-[1px] bg-gray-300 my-1"></div>
+            <p className="text-sm text-gray-700">{p.scale}</p>
+
+            <div className="absolute inset-0 bg-gradient-to-t from-white/80 to-white/0 opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-xl pointer-events-none"></div>
           </motion.div>
         ))}
       </div>
 
-      {/* ✅ 행사 갤러리 */}
-      <h2 className="text-3xl font-bold text-gray-700 text-center mb-8">
+      {/* Portfolio 갤러리 */}
+      <h2 className="text-3xl font-bold text-gray-700 text-center mt-12 mb-6">
         행사 갤러리
       </h2>
-
-      {images.length === 0 ? (
-        <p className="text-center text-gray-400">이미지 불러오는 중...</p>
-      ) : (
-        <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-4">
-          {images.map((img) => (
-            <img
-              key={img.id}
-              src={img.url}
-              alt=""
-              className="rounded-lg shadow-md hover:scale-[1.02] transition-transform"
-            />
-          ))}
-        </div>
-      )}
+      <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 gap-2 sm:gap-3 md:gap-4">
+        {images.map((url, i) => (
+          <img
+            key={i}
+            src={url}
+            alt={`gallery-${i}`}
+            className="rounded-lg shadow-sm w-full object-cover"
+          />
+        ))}
+      </div>
     </div>
   );
 }
