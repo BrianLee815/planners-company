@@ -1,6 +1,5 @@
 import { motion } from "framer-motion";
 import { Award, Landmark, Globe } from "lucide-react";
-import PortfolioGallery from "../components/PortfolioGallery";
 
 
 const projects = [
