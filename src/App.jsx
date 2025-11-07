@@ -1,21 +1,34 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Navbar from "./components/Navbar";
-import Footer from "./components/Footer"; // 경로 확인
+import Footer from "./components/Footer"; 
 import Home from "./pages/Home";
 import About from "./pages/About";
 import Projects from "./pages/Projects";
 import Contact from "./pages/Contact";
 import Services from "./pages/Services";
 
+import NoticeList from "./pages/NoticeList.jsx";        
+import NoticeAdmin from "./components/NoticeAdmin.jsx"; 
+import Login from "./components/Login.jsx";             
+
+import { useState, useEffect } from "react";
+import { onAuthStateChanged } from "firebase/auth";
+import { auth } from "./firebase";
+
 export default function App() {
+  const [user, setUser] = useState(null);
+
+  useEffect(() => {
+    const unsubscribe = onAuthStateChanged(auth, (u) => setUser(u));
+    return unsubscribe;
+  }, []);
+
   return (
     <Router>
       <div className="min-h-screen bg-white text-gray-800">
 
-        {/* Navbar */}
         <Navbar />
 
-        {/* Pages */}
         <main className="pt-32">
           <Routes>
             <Route path="/" element={<Home />} />
@@ -23,14 +36,23 @@ export default function App() {
             <Route path="/projects" element={<Projects />} />
             <Route path="/about" element={<About />} />
             <Route path="/contact" element={<Contact />} />
+
+            {/* 일반 사용자용 공지사항 */}
+            <Route path="/notices" element={<NoticeList />} />
+
+            {/* 관리자 로그인 / 관리 페이지 */}
+            <Route path="/admin" element={user ? <NoticeAdmin /> : <Login />} />
           </Routes>
         </main>
 
       </div>
+
       <Footer />
     </Router>
   );
 }
+
+
 
 
 

@@ -34,6 +34,7 @@ export default function Navbar() {
               <Link to="/services" className="text-gray-700 hover:text-primary transition">서비스</Link>
               <Link to="/projects" className="text-gray-700 hover:text-primary transition">포트폴리오</Link>
               <Link to="/about" className="text-gray-700 hover:text-primary transition">회사소개</Link>
+              <Link to="/notices" className="text-gray-700 hover:text-primary transition">공지사항</Link>
             </nav>
 
             {/* 문의하기 버튼 */}
@@ -72,7 +73,8 @@ export default function Navbar() {
           <Link to="/services" onClick={toggleMenu} className="text-gray-700 hover:text-primary transition">서비스분야</Link>
           <Link to="/projects" onClick={toggleMenu} className="text-gray-700 hover:text-primary transition">포트폴리오</Link>
           <Link to="/about" onClick={toggleMenu} className="text-gray-700 hover:text-primary transition">회사소개</Link>
-          
+          <Link to="/notices" onClick={toggleMenu} className="text-gray-700 hover:text-primary transition">공지사항</Link>
+
           {/* 모바일 메뉴 내부에 문의하기 버튼 추가 (필요시) */}
           <Link
             to="/contact"
