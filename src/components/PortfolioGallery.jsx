@@ -1,25 +1,24 @@
-import { useEffect, useState } from "react";
+export async function onRequestGet() {
+  const FOLDER_ID = "17sWL-j-7bl0vqBr60a5tiIn865mSkj_4"; // ✅ 네 폴더 ID
+  const API_KEY = import.meta.env.GOOGLE_DRIVE_KEY;
 
-export default function PortfolioGallery() {
-  const [images, setImages] = useState([]);
+  try {
+    const listURL = `https://www.googleapis.com/drive/v3/files?q='${FOLDER_ID}'+in+parents&key=${API_KEY}`;
+    const res = await fetch(listURL);
+    const json = await res.json();
 
-  useEffect(() => {
-    fetch("/api/getDriveFiles") // Cloudflare Function 호출
-      .then(res => res.json())
-      .then(data => setImages(data));
-  }, []);
+    const files = json.files || [];
 
-  return (
-    <div className="mt-16 max-w-6xl mx-auto px-6">
-      <h2 className="text-3xl font-bold text-gray-700 text-center mb-8">
-        행사 갤러리
-      </h2>
-      <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-4">
-        {images.map(img => (
-  <img key={img.id} src={img.url} className="rounded-lg shadow-md" />
-))}
+    const images = files.map(file => ({
+      id: file.id,
+      url: `https://drive.google.com/uc?export=download&id=${file.id}` // ✅ CORS 문제 없음
+    }));
 
-      </div>
-    </div>
-  );
+    return new Response(JSON.stringify(images), {
+      headers: { "Content-Type": "application/json" }
+    });
+  } catch (err) {
+    return new Response(JSON.stringify({ error: err.message }), { status: 500 });
+  }
 }
+
