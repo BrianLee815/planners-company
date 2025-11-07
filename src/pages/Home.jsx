@@ -56,7 +56,7 @@ export default function Home() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1 }}
         >
-          <h2 className="text-5xl md:text-6xl font-serif font-bold mb-8 text-gray-100">
+          <h2 className="text-5xl md:text-6xl Pretendard font-bold mb-8 text-gray-100">
             국제회의 · 포럼 · 전시/박람회 · 시상식
           </h2>
           <p className="text-lg md:text-xl font-light tracking-wide max-w-2xl mx-auto text-gray-100">
