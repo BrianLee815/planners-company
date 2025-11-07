@@ -1,18 +1,16 @@
-// src/components/Login.jsx
 import { useState, useEffect } from "react";
 import { auth } from "../firebase";
 import { signInWithEmailAndPassword, onAuthStateChanged, signOut } from "firebase/auth";
+import NoticeAdmin from "./NoticeAdmin.jsx";
 
-export default function Login({ onLogin }) {
+export default function Login({ user, onLogin }) {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const [user, setUser] = useState(null);
 
   // 로그인 상태 체크
   useEffect(() => {
     const unsubscribe = onAuthStateChanged(auth, (currentUser) => {
-      setUser(currentUser);
-      onLogin(currentUser); // App.jsx의 user 상태 업데이트
+      onLogin(currentUser); // App.jsx 상태 업데이트
     });
     return unsubscribe;
   }, [onLogin]);
@@ -27,19 +25,23 @@ export default function Login({ onLogin }) {
 
   const handleLogout = async () => {
     await signOut(auth);
+    onLogin(null);
   };
 
-  // 이미 로그인 상태면 로그아웃 버튼 표시
+  // 로그인 상태면 NoticeAdmin 표시 + 로그아웃 버튼
   if (user) {
     return (
-      <div className="max-w-md mx-auto mt-10 p-6 border rounded text-center">
-        <p>로그인 상태: {user.email}</p>
-        <button
-          onClick={handleLogout}
-          className="mt-4 p-2 bg-red-500 text-white rounded"
-        >
-          로그아웃
-        </button>
+      <div className="max-w-3xl mx-auto mt-10 p-6 border rounded">
+        <div className="flex justify-between items-center mb-4">
+          <p className="font-semibold">관리자: {user.email}</p>
+          <button
+            onClick={handleLogout}
+            className="p-2 bg-red-500 text-white rounded"
+          >
+            로그아웃
+          </button>
+        </div>
+        <NoticeAdmin />
       </div>
     );
   }

@@ -19,14 +19,15 @@ export default function App() {
   const [user, setUser] = useState(null);
 
   useEffect(() => {
-    const unsubscribe = onAuthStateChanged(auth, (u) => setUser(u));
+    const unsubscribe = onAuthStateChanged(auth, (currentUser) => {
+      setUser(currentUser);
+    });
     return unsubscribe;
   }, []);
 
   return (
     <Router>
       <div className="min-h-screen bg-white text-gray-800">
-
         <Navbar />
 
         <main className="pt-32">
@@ -43,21 +44,17 @@ export default function App() {
             {/* 관리자 로그인 / 관리 페이지 */}
             <Route
               path="/admin"
-              element={user ? (
-                <NoticeAdmin />
-              ) : (
-                <Login onLogin={setUser} /> // 로그인 후 user 상태 업데이트
-              )}
+              element={<Login user={user} onLogin={setUser} />}
             />
           </Routes>
         </main>
 
       </div>
-
       <Footer />
     </Router>
   );
 }
+
 
 
 
