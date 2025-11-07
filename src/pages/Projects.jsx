@@ -30,7 +30,7 @@ export default function Projects() {
   const [images, setImages] = useState([]);
 
   useEffect(() => {
-    fetch("https://script.google.com/macros/s/AKfycbypuxDmzART6S7eo0NvMq5RHNDmIgSm85TT0KCoregX9tlkCAflmPK8G-9MC8_kCpBY/exec") // ← 여기!! URL 붙여넣기
+    fetch("https://script.google.com/macros/s/AKfycbw3wsu6ac2YiYD9xmvS_XWEYWG9MSP87-7U1wD1Z2ZZEN3pVdrLczbk_mkbGv7mPY5mTw/exec") // ← 여기!! URL 붙여넣기
       .then((res) => res.json())
       .then((data) => setImages(data))
       .catch((err) => console.log("이미지 불러오기 실패:", err));
