@@ -1,72 +1,72 @@
+/* ✅ Pretendard Variable CDN 불러오기 */
 @import url('https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/variable/pretendardvariable.css');
 
-body {
-  font-family: "Pretendard Variable", Pretendard, sans-serif;
-}
-
+/* ✅ Tailwind */
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-/* 기본 body 스타일 */
-body {
+/* ✅ 전역 폰트/배경 설정 (중복 제거됨) */
+html, body {
   background-color: #1A1A1A;
   color: #FFFFFF;
-  font-family: "Pretendard", sans-serif;
+  font-family: "Pretendard Variable", Pretendard, sans-serif;
+  width: 100%;
+  max-width: 100%;
+  overflow-x: hidden;
   min-height: 100vh;
 }
 
-/* #root 전체 스타일 (데스크톱) */
+/* ✅ Root container 기본 */
 #root {
-  /* 🚩 수정: max-w와 고정 p-8 패딩을 제거했습니다. */
-  /* 이제 #root는 화면 너비 전체를 사용하며, 내부 컴포넌트가 max-width를 관리합니다. */
   @apply mx-auto text-center;
   background-color: inherit;
   color: inherit;
 }
 
-/* ✅ 모바일 (768px 미만)에서 패딩 최소화 */
+/* ✅ 모바일 대응 */
 @media (max-width: 768px) {
   #root {
-    /* 🚩 수정: p-4 패딩을 p-0으로 변경하여 화면 끝까지 콘텐츠가 확장됩니다. */
     @apply max-w-full p-0 text-left;
+  }
+
+  nav {
+    @apply flex flex-col gap-4;
   }
 }
 
-/* 카드 */
+/* ✅ 카드 */
 .card {
   @apply bg-dark-800 text-white shadow-lg rounded-lg p-6;
 }
 
-/* 버튼 */
+/* ✅ 버튼 */
 button, .btn {
-  @apply px-4 py-2 rounded-full border border-white text-white hover:bg-white hover:text-dark transition;
+  @apply px-4 py-2 rounded-full border border-white text-white 
+  hover:bg-white hover:text-dark transition;
 }
 
-/* 링크 */
+/* ✅ 링크 */
 a {
   @apply text-white hover:text-accent transition;
   text-decoration: none;
 }
 
-/* 입력폼 */
+/* ✅ 입력폼 */
 input, textarea, select {
-  @apply bg-dark-700 text-white border border-gray-600 rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-primary;
+  @apply bg-dark-700 text-white border border-gray-600 rounded px-3 py-2 
+  focus:outline-none focus:ring-2 focus:ring-primary;
 }
 
-/* 로고 */
+/* ✅ 로고 */
 .logo {
   height: 6em;
   padding: 1.5em;
   will-change: filter;
   transition: filter 300ms;
 }
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
-}
+.logo:hover { filter: drop-shadow(0 0 2em #646cffaa); }
+.logo.react:hover { filter: drop-shadow(0 0 2em #61dafbaa); }
 
 @keyframes logo-spin {
   from { transform: rotate(0deg); }
@@ -79,18 +79,4 @@ input, textarea, select {
   }
 }
 
-/* 반응형 예제 */
-@media (max-width: 768px) {
-  nav {
-    @apply flex flex-col gap-4;
-  }
-}
-
-/* Redundant but keeping the background fix */
-html, body {
-  width: 100%;
-  max-width: 100%;
-  overflow-x: hidden;
-  background: #1A1A1A;
-}
 
