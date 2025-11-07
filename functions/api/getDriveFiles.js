@@ -1,4 +1,6 @@
 export async function onRequestGet() {
+
+  console.log("GOOGLE_API_KEY:", process.env.GOOGLE_API_KEY);
   const folderId = "17sWL-j-7bl0vqBr60a5tiIn865mSkj_4";
   const apiKey = process.env.GOOGLE_API_KEY;
 
