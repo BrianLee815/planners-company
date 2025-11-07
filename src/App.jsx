@@ -41,7 +41,14 @@ export default function App() {
             <Route path="/notices" element={<NoticeList />} />
 
             {/* 관리자 로그인 / 관리 페이지 */}
-            <Route path="/admin" element={user ? <NoticeAdmin /> : <Login />} />
+            <Route
+              path="/admin"
+              element={user ? (
+                <NoticeAdmin />
+              ) : (
+                <Login onLogin={setUser} /> // 로그인 후 user 상태 업데이트
+              )}
+            />
           </Routes>
         </main>
 

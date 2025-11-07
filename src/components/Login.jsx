@@ -1,47 +1,63 @@
-import { useState } from "react";
-import { signInWithEmailAndPassword } from "firebase/auth";
+// src/components/Login.jsx
+import { useState, useEffect } from "react";
 import { auth } from "../firebase";
-import { useNavigate } from "react-router-dom";
+import { signInWithEmailAndPassword, onAuthStateChanged, signOut } from "firebase/auth";
 
-export default function Login() {
+export default function Login({ onLogin }) {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const [error, setError] = useState("");
-  const navigate = useNavigate();
+  const [user, setUser] = useState(null);
+
+  useEffect(() => {
+    const unsubscribe = onAuthStateChanged(auth, (currentUser) => {
+      setUser(currentUser);
+      onLogin(currentUser);
+    });
+    return unsubscribe;
+  }, [onLogin]);
 
   const handleLogin = async () => {
     try {
       await signInWithEmailAndPassword(auth, email, password);
-      navigate("/admin"); // 로그인 성공 시 관리자 페이지 이동
-    } catch (err) {
-      setError("로그인 실패: " + err.message);
+    } catch (error) {
+      alert("로그인 실패: " + error.message);
     }
   };
 
+  const handleLogout = async () => {
+    await signOut(auth);
+  };
+
+  if (user) {
+    return (
+      <div className="max-w-md mx-auto mt-10 p-6 border rounded">
+        <p>로그인: {user.email}</p>
+        <button onClick={handleLogout} className="mt-4 p-2 bg-red-500 text-white rounded">
+          로그아웃
+        </button>
+      </div>
+    );
+  }
+
   return (
-    <div className="max-w-md mx-auto mt-20 p-6 border rounded">
-      <h2 className="text-xl font-bold mb-4">관리자 로그인</h2>
+    <div className="max-w-md mx-auto mt-10 p-6 border rounded">
       <input
         type="email"
         placeholder="Email"
         value={email}
         onChange={(e) => setEmail(e.target.value)}
-        className="w-full mb-2 p-2 border rounded"
+        className="border p-2 w-full mb-2"
       />
       <input
         type="password"
         placeholder="Password"
         value={password}
         onChange={(e) => setPassword(e.target.value)}
-        className="w-full mb-2 p-2 border rounded"
+        className="border p-2 w-full mb-2"
       />
-      <button
-        onClick={handleLogin}
-        className="w-full bg-blue-500 text-white p-2 rounded"
-      >
+      <button onClick={handleLogin} className="p-2 bg-blue-500 text-white rounded w-full">
         로그인
       </button>
-      {error && <p className="text-red-500 mt-2">{error}</p>}
     </div>
   );
 }
