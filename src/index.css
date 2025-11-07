@@ -88,8 +88,10 @@ html, body {
   background: #1A1A1A;
 }
 
-
-
-body {
-  font-family: "Pretendard Variable", Pretendard, -apple-system, BlinkMacSystemFont, system-ui, sans-serif;
+@font-face {
+  font-family: "Pretendard";
+  src: url("/fonts/Pretendard-Regular.woff2") format("woff2");
+  font-weight: 400;
+  font-style: normal;
 }
+
