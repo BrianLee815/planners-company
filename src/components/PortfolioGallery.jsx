@@ -15,14 +15,10 @@ export default function PortfolioGallery() {
         행사 갤러리
       </h2>
       <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-4">
-        {images.map((url, idx) => (
-          <img
-            key={idx}
-            src={url}
-            alt={`Gallery ${idx + 1}`}
-            className="w-full h-48 object-cover rounded-lg shadow-md hover:scale-105 transition-transform duration-300"
-          />
-        ))}
+        {images.map(img => (
+  <img key={img.id} src={img.url} className="rounded-lg shadow-md" />
+))}
+
       </div>
     </div>
   );

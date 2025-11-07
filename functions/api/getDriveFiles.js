@@ -1,22 +1,20 @@
-export async function onRequestGet({ env }) {
+export async function onRequestGet() {
   const folderId = "17sWL-j-7bl0vqBr60a5tiIn865mSkj_4";
-  const apiKey = env.GOOGLE_API_KEY; // ✅ 이렇게 수정
+  const apiKey = process.env.GOOGLE_API_KEY;
 
-  const url = `https://www.googleapis.com/drive/v3/files?q='${folderId}'+in+parents&key=${apiKey}&fields=files(id,name,mimeType)`;
+  const url = `https://www.googleapis.com/drive/v3/files?q='${folderId}'+in+parents&key=${apiKey}&fields=files(id,name)`;
 
   const res = await fetch(url);
   const data = await res.json();
 
-  const images = data.files.map((file) => ({
+  const images = data.files.map(file => ({
     id: file.id,
-    url: `https://www.googleapis.com/drive/v3/files/${file.id}?alt=media&key=${apiKey}`
+    url: `https://drive.google.com/uc?export=view&id=${file.id}`
   }));
 
   return new Response(JSON.stringify(images), {
-    headers: {
-      "Content-Type": "application/json",
-      "Access-Control-Allow-Origin": "*",
-    }
+    headers: { "Content-Type": "application/json" },
   });
 }
+
 
