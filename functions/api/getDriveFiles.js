@@ -1,4 +1,4 @@
-export async function onRequestGet({ request }) {
+export async function onRequestGet({ env }) {
   try {
     const folderId = "17sWL-j-7bl0vqBr60a5tiIn865mSkj_4"; // 공유 폴더 ID
     const apiKey = env.GOOGLE_API_KEY; // Cloudflare 환경변수에 설정
