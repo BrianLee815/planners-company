@@ -1,7 +1,7 @@
 export async function onRequestGet({ request }) {
   try {
     const folderId = "17sWL-j-7bl0vqBr60a5tiIn865mSkj_4"; // 공유 폴더 ID
-    const apiKey = process.env.GOOGLE_API_KEY; // Cloudflare 환경변수에 설정
+    const apiKey = env.GOOGLE_API_KEY; // Cloudflare 환경변수에 설정
 
     if (!apiKey) {
       throw new Error("Missing GOOGLE_API_KEY");
