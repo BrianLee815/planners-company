@@ -1,14 +1,13 @@
-export async function onRequestGet({ env }) {
+export async function onRequestGet(context) {
   try {
-    const folderId = "17sWL-j-7bl0vqBr60a5tiIn865mSkj_4"; // 공유 폴더 ID
-    const apiKey = env.GOOGLE_API_KEY; // Cloudflare 환경변수에 설정
+    const folderId = "17sWL-j-7bl0vqBr60a5tiIn865mSkj_4";
+    const apiKey = context.env.GOOGLE_API_KEY;
 
     if (!apiKey) {
       throw new Error("Missing GOOGLE_API_KEY");
     }
 
     const url = `https://www.googleapis.com/drive/v3/files?q='${folderId}'+in+parents&key=${apiKey}&fields=files(id,name)`;
-
     const res = await fetch(url);
 
     if (!res.ok) {
@@ -16,8 +15,6 @@ export async function onRequestGet({ env }) {
     }
 
     const data = await res.json();
-
-    // 파일 목록에서 직접 이미지 링크 생성
     const images = data.files.map(file => `https://drive.google.com/uc?export=view&id=${file.id}`);
 
     return new Response(JSON.stringify(images), {
