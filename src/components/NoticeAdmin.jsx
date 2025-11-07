@@ -58,7 +58,7 @@ export default function NoticeAdmin() {
           <li key={notice.id} className="border p-2 mb-2">
             <h3 className="font-bold">{notice.title}</h3>
             <p>{notice.content}</p>
-            <p className="text-sm text-gray-500">{notice.author} / {notice.createdAt.toDateString?.() || notice.createdAt.toString()}</p>
+            {/* <p className="text-sm text-gray-500">{notice.author} / {notice.createdAt.toDateString?.() || notice.createdAt.toString()}</p> */}
             <button
               onClick={() => handleDelete(notice.id)}
               className="mt-2 p-1 bg-red-500 text-white rounded"
