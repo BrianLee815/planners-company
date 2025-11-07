@@ -3,7 +3,7 @@ export default function About() {
     <div className="pt-32 w-full px-4 sm:px-6 bg-white text-black leading-relaxed font-sans text-left">
 
       <h1 className="text-4xl font-bold text-primary mb-12 text-center">
-        회사소개
+        Company Introduction
       </h1>
 
       {/* 회사 소개 */}
@@ -18,7 +18,7 @@ export default function About() {
 
       {/* 조직 구성 */}
       <section className="mb-20 text-center">
-        <h2 className="text-2xl font-bold text-primary mb-12">조직 구성</h2>
+        <h2 className="text-2xl font-bold text-primary mb-12">Organization Structur</h2>
 
         <div className="h-2"></div> 
 
@@ -70,7 +70,7 @@ export default function About() {
 
       {/* 연혁 */}
       <section className="pb-32">
-        <h2 className="text-2xl font-bold text-center text-primary mb-8">연혁</h2>
+        <h2 className="text-2xl font-bold text-center text-primary mb-8">History</h2>
         <ul className="space-y-4 text-sm text-center">
           <li>2023 · 플래너스 컴퍼니 설립</li>
           <li>2024 · 공공기관 포럼 및 시상식 운영 프로젝트 다수 수행</li>
@@ -79,7 +79,7 @@ export default function About() {
       </section>
       <section className="py-24 bg-gray-50">
   <h2 className="text-3xl font-bold text-center text-primary mb-10">
-    오시는 길
+    Location
   </h2>
 
   <div className="md:max-w-5xl mx-auto grid md:grid-cols-2 gap-10 items-center">

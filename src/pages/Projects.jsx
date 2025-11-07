@@ -1,5 +1,7 @@
 import { motion } from "framer-motion";
 import { Award, Landmark, Globe } from "lucide-react";
+import PortfolioGallery from "../components/PortfolioGallery";
+
 
 const projects = [
   {
@@ -28,31 +30,48 @@ const projects = [
 export default function Projects() {
   return (
     <div className="pt-32 max-w-6xl mx-auto px-6">
-  <h1 className="text-4xl font-bold text-gray-700 mb-12 text-center font-sans">
-    portpolio
-  </h1>
+      <h1 className="text-4xl font-bold text-gray-700 mb-12 text-center font-sans">
+        Portfolio
+      </h1>
 
-  <div className="grid md:grid-cols-3 gap-8">
-    {projects.map((p, i) => (
-      <motion.div
-        key={i}
-        className="border border-gray-700 p-8 bg-gray-200 rounded-xl shadow-sm hover:shadow-lg transition-shadow duration-300 ease-in-out"
-        initial={{ opacity: 0, y: 20 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true }}
-      >
-        <p className="text-sm text-gray-700 mb-2 font-sans">{p.year}</p>
-        <h3 className="text-lg font-semibold mb-3 text-gray-700 flex items-center font-sans">
-          <p.icon className="w-5 h-5 mr-2 text-primary" />
-          {p.name}
-        </h3>
-        <p className="text-sm text-primary font-medium mb-2 font-sans">{p.role}</p>
-        <p className="text-sm text-gray-700 font-sans">{p.scale}</p>
-      </motion.div>
-    ))}
-  </div>
-</div>
+      <div className="grid md:grid-cols-3 gap-8">
+        {projects.map((p, i) => (
+          <motion.div
+            key={i}
+            className="relative overflow-hidden rounded-xl shadow-lg hover:shadow-2xl transition-shadow duration-300 ease-out bg-gradient-to-br from-white to-gray-100 p-8 cursor-pointer group"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+          >
+            {/* 아이콘 */}
+            <div className="absolute -top-5 right-5 w-14 h-14 flex items-center justify-center rounded-full bg-primary/20 text-primary text-2xl group-hover:scale-110 transition-transform duration-300">
+              <p.icon className="w-7 h-7" />
+            </div>
 
+            {/* 연도 */}
+            <p className="text-sm text-gray-500 mb-2 font-sans">{p.year}</p>
+
+            {/* 프로젝트 이름 */}
+            <h3 className="text-lg font-semibold mb-3 text-gray-800 font-sans">{p.name}</h3>
+
+            {/* 역할 */}
+            <p className="text-sm text-primary font-medium mb-2 font-sans">{p.role}</p>
+
+            {/* 구분선 */}
+            <div className="h-[1px] bg-gray-300 my-2"></div>
+
+            {/* 규모 */}
+            <p className="text-sm text-gray-700 font-sans">{p.scale}</p>
+
+            {/* Hover Overlay */}
+            <div className="absolute inset-0 bg-gradient-to-t from-white/80 to-white/0 opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-xl pointer-events-none"></div>
+          </motion.div>
+        ))}
+      </div>
+        <PortfolioGallery />
+      
+    </div>
   );
 }
+
 

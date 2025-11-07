@@ -51,7 +51,7 @@ export default function Contact() {
 
       <form onSubmit={handleSubmit} className="space-y-6">
         <div>
-          <label className="block text-sm font-medium mb-1">이름</label>
+          <label className="block text-sm font-medium mb-1">이름(Name)</label>
           <input
             type="text"
             name="name"
@@ -63,7 +63,7 @@ export default function Contact() {
         </div>
 
         <div>
-          <label className="block text-sm font-medium mb-1">이메일</label>
+          <label className="block text-sm font-medium mb-1">이메일(Email Address)</label>
           <input
             type="email"
             name="email"
@@ -75,7 +75,7 @@ export default function Contact() {
         </div>
 
         <div>
-          <label className="block text-sm font-medium mb-1">문의 내용</label>
+          <label className="block text-sm font-medium mb-1">문의 내용(Message)</label>
           <textarea
             name="message"
             value={formData.message}

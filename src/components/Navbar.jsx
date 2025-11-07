@@ -12,7 +12,7 @@ export default function Navbar() {
 
   return (
     // 1. 메인 헤더 (상단 고정)
-    <header className="fixed top-0 left-0 w-full bg-white/90 backdrop-blur-sm shadow-sm z-50 border-b border-gray-200">
+    <header className="fixed top-0 left-0 w-full bg-white/30 backdrop-blur-sm shadow-sm z-50 border-b border-gray-200">
       <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 py-4 flex justify-between items-center">
 
         {/* 로고: Link로 변경하여 SPA 작동 유지 */}
@@ -31,7 +31,7 @@ export default function Navbar() {
             
             {/* PC 메뉴 */}
             <nav className="flex gap-6 text-sm font-medium">
-              <Link to="/services" className="text-gray-700 hover:text-primary transition">서비스분야</Link>
+              <Link to="/services" className="text-gray-700 hover:text-primary transition">서비스</Link>
               <Link to="/projects" className="text-gray-700 hover:text-primary transition">포트폴리오</Link>
               <Link to="/about" className="text-gray-700 hover:text-primary transition">회사소개</Link>
             </nav>
