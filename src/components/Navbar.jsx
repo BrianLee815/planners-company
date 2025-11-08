@@ -1,6 +1,6 @@
 import { useState } from "react"; // useState 훅 import
 import { Link } from "react-router-dom"; // Link 컴포넌트 사용
-import logo from "/src/assets/logo.png";
+import logo from "/src/assets/logo3-re.png";
 
 export default function Navbar() {
   // 모바일 메뉴 상태 관리 (true: 열림, false: 닫힘)
@@ -41,7 +41,7 @@ export default function Navbar() {
             {/* 문의하기 버튼 */}
             <Link
               to="/contact"
-              className="px-3 py-2 rounded-full bg-primary/10 text-primary border border-primary hover:bg-primary hover:text-white transition-colors text-sm"
+              className="px-3 py-2 rounded-lg bg-primary/10 text-primary border border-primary hover:bg-primary hover:text-white transition-colors text-sm"
             >
               문의하기
             </Link>
@@ -71,7 +71,7 @@ export default function Navbar() {
         }`}
       >
         <nav className="flex flex-col gap-4 px-6 text-base font-medium">
-          <Link to="/services" onClick={toggleMenu} className="text-gray-700 hover:text-primary transition">서비스분야</Link>
+          <Link to="/services" onClick={toggleMenu} className="text-gray-700 hover:text-primary transition">서비스</Link>
           <Link to="/projects" onClick={toggleMenu} className="text-gray-700 hover:text-primary transition">포트폴리오</Link>
           <Link to="/about" onClick={toggleMenu} className="text-gray-700 hover:text-primary transition">회사소개</Link>
           <Link to="/notices" onClick={toggleMenu} className="text-gray-700 hover:text-primary transition">공지사항</Link>
@@ -80,7 +80,7 @@ export default function Navbar() {
           <Link
             to="/contact"
             onClick={toggleMenu}
-            className="mt-2 text-center px-3 py-2 rounded-full bg-primary text-white hover:bg-primary/90 transition-colors text-sm"
+            className="mt-2 text-center px-3 py-2 rounded-sm bg-primary text-white hover:bg-primary/90 transition-colors text-sm"
           >
             문의하기
           </Link>

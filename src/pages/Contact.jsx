@@ -89,7 +89,7 @@ export default function Contact() {
         <button
           type="submit"
           disabled={loading}
-          className="bg-primary text-white px-6 py-2 rounded-full hover:bg-accent transition"
+          className="bg-primary text-white px-6 py-2 rounded-lg hover:bg-accent transition"
         >
           {loading ? "제출 중..." : "보내기"}
         </button>

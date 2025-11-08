@@ -60,7 +60,7 @@ export default function Services() {
       <section className="text-center pb-32">
         <a
           href="/contact"
-          className="inline-block px-8 py-3 border border-primary text-primary rounded-full hover:bg-primary hover:text-white transition"
+          className="inline-block px-8 py-3 border border-primary text-primary rounded-lg hover:bg-primary hover:text-white transition"
         >
           Contact Us
         </a>
