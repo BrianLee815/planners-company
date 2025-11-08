@@ -72,9 +72,17 @@ export default function About() {
       <section className="pb-32">
         <h2 className="text-2xl font-bold text-center text-primary mb-8">History</h2>
         <ul className="space-y-4 text-sm text-center">
-          <li>2023 · 플래너스 컴퍼니 설립</li>
-          <li>2024 · 공공기관 포럼 및 시상식 운영 프로젝트 다수 수행</li>
-          <li>2025 · 국내 주요 박람회 및 국제회의 기획 / 실행</li>
+          <li>2023 · 기타행사기획및대행서비스 직접생산확인증명 자격 취득</li>
+          <li>2023 · 국내외 침해사고대응 초청교육 개최 용역 사업</li>
+          <li>2023 · KrCERT/CC 성숙도 인증 워크숍 개최 사업</li> 
+          <li>2023 · 회의기획및대행서비스 직접생산확인증명 자격 취득</li>
+          <li>2023 · 사단법인 한국MICE협회 회원사 가입</li>
+          <li>2023 · 연구회 설립 25주년 기념 제2차 심포지엄 행사 운영 사업</li>
+          <li>2023 · 연구개발전담부서 인정 및 설립</li>
+          <li>2024 · 국외 전시 참관 및 세미나 개최 사업</li> 
+          <li>2024 · 한국콘텐츠진흥원 지원사업 설명회 운영 사업</li> 
+          <li>2024 · 디지털 탄소중립 국내외 행사 개최 사업</li> 
+          <li>2025 · 국외 전시 참관 및 세미나 개최 사업</li> 
         </ul>
       </section>
       <section className="py-24 bg-gray-50">
