@@ -4,24 +4,24 @@ import { Award, Landmark, Globe } from "lucide-react";
 
 const projects = [
   {
-    name: "○○ 공공 포럼",
-    role: "프로그램 기획 및 현장 운영 총괄",
-    scale: "참가자 120명 수준",
-    year: "2023",
+    name: "국외 전시 참관 및 세미나 개최",
+    role: "현지 전시 참관 및 참가기업 혁신기술 세미나 지원",
+    scale: "현지 파트너사 등 현지 네트워크 활용",
+    year: "2024-2025",
     icon: Globe,
   },
   {
-    name: "○○ 기관 정책 세미나",
+    name: "2023 연구회 설림 25주년 기념 제2차 심포지엄",
     role: "연사 섭외 / 진행 시나리오 / 운영 매뉴얼 구축",
-    scale: "기관 VIP 및 관계자 대상",
-    year: "2022",
+    scale: "정부부처∙지방자치단체, 연구기관 ∙학계 관계자 등 약 300명 ",
+    year: "2023",
     icon: Landmark,
   },
   {
-    name: "○○ 우수사례 시상식",
+    name: "한국콘텐츠진흥원 지원사업 설명회",
     role: "무대 연출 및 전체 오퍼레이션 운영",
     scale: "현장 / 온라인 하이브리드",
-    year: "2023",
+    year: "2024",
     icon: Award,
   },
 ];
