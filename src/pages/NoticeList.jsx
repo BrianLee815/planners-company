@@ -20,7 +20,7 @@ export default function NoticeList() {
 
   return (
     <div className="max-w-3xl mx-auto p-6">
-      <h2 className="text-2xl font-bold mb-6">공지사항</h2>
+      <h2 className="text-2xl font-bold mb-6">Notice</h2>
 
       <ul className="space-y-4"> {/* ✅ 공지 간격 */}
         {notices.map((notice) => (

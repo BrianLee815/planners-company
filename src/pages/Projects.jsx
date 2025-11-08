@@ -67,7 +67,7 @@ export default function Projects() {
 
       {/* ✅ 행사 갤러리 */}
       <h2 className="text-3xl font-bold text-gray-700 text-center mb-8">
-        행사 갤러리
+        Gallery
       </h2>
 
       {images.length === 0 ? (
