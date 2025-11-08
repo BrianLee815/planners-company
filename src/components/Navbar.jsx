@@ -1,5 +1,6 @@
 import { useState } from "react"; // useState 훅 import
 import { Link } from "react-router-dom"; // Link 컴포넌트 사용
+import logo from "/src/assets/logo.png";
 
 export default function Navbar() {
   // 모바일 메뉴 상태 관리 (true: 열림, false: 닫힘)
@@ -17,11 +18,11 @@ export default function Navbar() {
 
         {/* 로고: Link로 변경하여 SPA 작동 유지 */}
         <Link 
-          to="/" 
-          className="font-serif text-2xl font-bold text-primary tracking-tight hover:text-primary transition"
-        >
-          Planners Company
-        </Link>
+  to="/" 
+  className="flex items-center hover:opacity-80 transition"
+>
+  <img src={logo} alt="Logo" className="h-12 w-auto" />
+</Link>
 
         {/* 메뉴 + 문의하기 (큰 화면) & 햄버거 버튼 (작은 화면) */}
         <div className="flex items-center gap-4 sm:gap-6">
