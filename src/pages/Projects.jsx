@@ -74,14 +74,17 @@ export default function Projects() {
         <p className="text-center text-gray-400">이미지 불러오는 중...</p>
       ) : (
         <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-4">
-          {images.map((img) => (
-            <img
-              key={img.id}
-              src={img.url}
-              alt=""
-              className="rounded-lg shadow-md hover:scale-[1.02] transition-transform"
-            />
+          {images.map(img => (
+             <div key={img.id} className="text-center">
+             <img src={img.url} className="rounded-lg shadow-md" />
+             {img.description && (
+               <p className="text-sm text-gray-400 mt-2">
+                {img.description}
+               </p>
+             )}
+           </div>
           ))}
+
         </div>
       )}
     </div>
