@@ -7,9 +7,9 @@ export default function Home() {
   const [selectedCert, setSelectedCert] = useState(null); // 추가: 모달용 state
 
   const services = [
-    { title: "공공기관 포럼", desc: "정부 및 공공기관이 주최하는 주요 정책 포럼 & 대담 기획", icon: "🏛️" },
-    { title: "전시 / 박람회", desc: "산업전, 지역특화 박람회, 국제 교류 전시 프로그램 운영", icon: "🖼️" },
-    { title: "어워즈 / 시상식", desc: "브랜드 시상식, 공공/민간 어워즈, 연례 행사 기획", icon: "🏆" },
+    { title: "컨벤션 및 전시행사 대행", desc: "국제회의 기획·운영, 국제회의 유치지원 업무, 관광, 예산, 전시 기획· 운영·관리, 홍보 및 마케팅", icon: "🏛️" },
+    { title: "MICE컨시어지 서비스", desc: "각종 학회, 협회, 정부 관공서, 공공기관, 컨벤션 센터, 기업체, 의료분야, 외국기업 등  다양한 분야의 클라이언트에게  MICE 솔루션 및 컨설팅 서비스 제공", icon: "🖼️" },
+    { title: "행사 시스템 기획 및 운영", desc: "행사장을 구성하는 무대, 영상, 조명, 중계, 발표 시스템 등 여러 분야의 시스템을 통합적으로 관리 운영", icon: "🏆" },
   ];
 
   const steps = [
@@ -24,14 +24,14 @@ export default function Home() {
   ];
 
   const partners = [
-    { name: "한국인터넷진흥원", logo: "/images/partners/kisa.png", url: "https://www.kisa.or.kr" },
-    { name: "한국콘텐츠진흥원", logo: "/images/partners/kocca.png", url: "https://www.kocca.kr" },
-    { name: "정보통신기획평가원", logo: "/images/partners/iitp.png", url: "https://www.iitp.kr" },
-    { name: "SK Innovation", logo: "/images/partners/sk_logo.svg", url: "https://www.skinnovation.com" },
-    { name: "LG", logo: "/images/partners/lg_logo.png", url: "https://www.lg.co.kr" },
-    { name: "Hyundai Motor Group", logo: "/images/partners/hyundai_logo.svg", url: "https://www.hyundaimotorgroup.com" },
-    { name: "CES", logo: "/images/partners/ces.png", url: "https://www.ces.tech" },
-    { name: "MWC", logo: "/images/partners/mwc.png", url: "https://www.mwcbarcelona.com" },
+    { logo: "/images/partners/kisa.png", url: "https://www.kisa.or.kr" },
+    { logo: "/images/partners/kocca.png", url: "https://www.kocca.kr" },
+    { logo: "/images/partners/iitp.png", url: "https://www.iitp.kr" },
+    { logo: "/images/partners/nrc.png", url: "https://www.nrc.re.kr/" },
+    { logo: "/images/partners/nst.png", url: "https://www.nst.re.kr/www/index.do" },
+    { logo: "/images/partners/ifa.png", url: "https://www.ifa-berlin.com/" },
+    { logo: "/images/partners/ces.png", url: "https://www.ces.tech" },
+    { logo: "/images/partners/mwc.png", url: "https://www.mwcbarcelona.com" },
   ];
 
   const certs = [
@@ -121,14 +121,19 @@ export default function Home() {
                 <li>나라장터 입찰 등록 기업 (조달청)</li>
                 <li>경쟁입찰허가자격등록증 (조달청)</li>
                 <li>직접생산확인증명서</li>
+                <li>회의기획및대행서비스</li>
+                <li>기타행사기획및대행서비스</li>
               </ul>
             </div>
             <div>
               <h3 className="font-semibold text-lg text-gray-700 mb-4">주요 협력 및 운영 이력</h3>
               <ul className="space-y-2 list-disc pl-5">
-                <li>중앙정부 및 지자체 정책 포럼 운영</li>
-                <li>국제 전시 / 산업 박람회 PM & 운영 진행</li>
-                <li>기업 어워즈 / 시상식 / 연례 행사 총괄 기획</li>
+                <li>2023년 국내외 침해사고대응 초청교육 개최(7년 연속)</li>
+                <li>2023년 연구회 설립 25주년 기념 2차 심포지엄</li>
+                <li>2024년 한국코텐츠진흥원 지원사업 설명회</li>
+                <li>2024&2025년도 국외 전시 참관 및 세미나 개최(2년 연속)</li>
+                <li>아세안 사이버 쉴드(ACS) 온라인 교육 부트캠프 운영 (2025년도)</li>
+        
               </ul>
             </div>
           </div>
@@ -218,7 +223,7 @@ export default function Home() {
                            group-hover:shadow-xl group-hover:ring-blue-300 group-hover:scale-[1.05] group-hover:-translate-y-0.5
                            transition-all duration-300 ease-out cursor-pointer"
               >
-                <div className="h-12 flex items-center mb-2">
+                <div className="h-20 flex items-center mb-2">
                   <img src={partner.logo} alt={`${partner.name} Logo`} className="h-full w-auto object-contain filter grayscale group-hover:grayscale-0 transition-all duration-300"/>
                 </div>
                 <p className="text-sm font-medium text-gray-700 text-center">{partner.name}</p>
