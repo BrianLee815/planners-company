@@ -60,7 +60,8 @@ export default function Home() {
             국제회의 · 포럼 · 전시/박람회 · 시상식
           </h2>
           <p className="text-lg md:text-xl font-light tracking-wide max-w-2xl mx-auto text-gray-100">
-            플래너스 컴퍼니는 전문성과 창의성을 바탕으로 품격 있는 행사 경험을 제공합니다.
+            플래너스컴퍼니는 국제회의, 이벤트, 홍보 분야 전문가들이 모인 회사입니다. 고객의 요청에 꼭 맞는 솔루션을 제공하며, 
+            나아가 든든한 파트너가 되어 성공적인 행사를 만드는 것이 목표입니다.
           </p>
         </motion.div>
       </section>
@@ -130,7 +131,7 @@ export default function Home() {
               <ul className="space-y-2 list-disc pl-5">
                 <li>2023년 국내외 침해사고대응 초청교육 개최(7년 연속)</li>
                 <li>2023년 연구회 설립 25주년 기념 2차 심포지엄</li>
-                <li>2024년 한국코텐츠진흥원 지원사업 설명회</li>
+                <li>2024년 콘텐츠진흥원 지원사업 설명회</li>
                 <li>2024&2025년도 국외 전시 참관 및 세미나 개최(2년 연속)</li>
                 <li>아세안 사이버 쉴드(ACS) 온라인 교육 부트캠프 운영 (2025년도)</li>
         
