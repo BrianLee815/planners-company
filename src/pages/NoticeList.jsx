@@ -30,22 +30,22 @@ export default function NoticeList() {
           >
             {/* 제목 버튼 */}
             {/* 제목 버튼 */}
-<button 
-  onClick={() => toggleNotice(notice.id)}
-  className="w-full flex justify-between items-center text-left"
->
-  <span className="font-semibold text-lg text-gray-800">{notice.title}</span>
+          <button 
+            onClick={() => toggleNotice(notice.id)}
+            className="w-full flex justify-between items-center text-left"
+          >
+          <span className="font-semibold text-lg text-gray-800">{notice.title}</span>
   
-  {/* 화살표 */}
-  <svg 
-    className={`w-5 h-5 transition-transform ${openId === notice.id ? "rotate-180" : ""}`} 
-    fill="none" 
-    stroke="currentColor" 
-    viewBox="0 0 24 24"
-  >
-    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 9l-7 7-7-7" />
-  </svg>
-</button>
+          {/* 화살표 */}
+          <svg 
+            className={`w-5 h-5 transition-transform ${openId === notice.id ? "rotate-180" : ""}`} 
+            fill="none" 
+            stroke="currentColor" 
+            viewBox="0 0 24 24"
+          >
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 9l-7 7-7-7" />
+            </svg>
+          </button>
 
 
             {/* 내용 (펼칠 때만 보임) */}
