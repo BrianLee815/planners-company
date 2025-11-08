@@ -66,7 +66,7 @@ export default function Projects() {
       </div>
 
       {/* ✅ 행사 갤러리 */}
-      <h2 className="text-3xl font-bold text-gray-700 text-center mb-8">
+      <h2 className="text-4xl font-bold text-gray-700 text-center mb-8">
         Gallery
       </h2>
 
