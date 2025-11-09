@@ -104,18 +104,32 @@ export default function About() {
         </ul>
       </section>
 
+      
       {/* 위치 */}
-      <section className="py-16 bg-gray-50">
+{/* 위치 */}
+<section className="py-16 bg-gray-50">
   {/* 제목 가운데 정렬 */}
   <h2 className="text-3xl font-bold text-black mb-8 text-center">
     Directions
   </h2>
 
   <div className="md:max-w-5xl mx-auto md:flex md:items-start md:gap-10">
-    {/* 좌측: 연락처 */}
+    {/* 좌측: 지도 */}
+    <div className="md:w-1/2 w-full h-64 md:h-80 rounded-xl overflow-hidden shadow-md mt-6 md:mt-0">
+      <iframe
+        title="location"
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3166.013537166538!2d127.0160173952164!3d37.48400691853165!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x357ca13e2fcf9dbb%3A0x41f2f5de65091fbc!2z7ISc7Jq47Yq567OE7IucIOyEnOy0iOq1rCDshJzstIjspJHslZnroZwy6ri4IDM1!5e0!3m2!1sko!2skr!4v1762410876329!5m2!1sko!2skr"
+        className="w-full h-full border-0"
+        allowFullScreen
+        loading="lazy"
+        referrerPolicy="no-referrer-when-downgrade"
+      ></iframe>
+    </div>
+
+    {/* 우측: 연락처 */}
     <ul className="md:w-1/2 space-y-2 text-gray-700 text-sm leading-relaxed">
       <li>
-        <span className="font-medium text-black">주소|</span>
+        <span className="font-medium text-black">주소 |</span>
         서울특별시 서초구 서초중앙로2길 35 동일빌딩 210호(06721)
       </li>
       <li>
@@ -130,20 +144,10 @@ export default function About() {
         plan1@plannerscom.kr
       </li>
     </ul>
-
-    {/* 우측: 지도 */}
-    <div className="md:w-1/2 w-full h-[350px] rounded-xl overflow-hidden shadow-md mt-6 md:mt-0">
-      <iframe
-        title="location"
-        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3166.013537166538!2d127.0160173952164!3d37.48400691853165!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x357ca13e2fcf9dbb%3A0x41f2f5de65091fbc!2z7ISc7Jq47Yq567OE7IucIOyEnOy0iOq1rCDshJzstIjspJHslZnroZwy6ri4IDM1!5e0!3m2!1sko!2skr!4v1762410876329!5m2!1sko!2skr"
-        className="w-full h-full border-0"
-        allowFullScreen
-        loading="lazy"
-        referrerPolicy="no-referrer-when-downgrade"
-      ></iframe>
-    </div>
   </div>
 </section>
+
+
 
 
     
