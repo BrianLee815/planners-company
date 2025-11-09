@@ -6,6 +6,8 @@ import About from "./pages/About";
 import Projects from "./pages/Projects";
 import Contact from "./pages/Contact";
 import Services from "./pages/Services";
+import Terms from "./pages/Terms";
+import Privacy from "./pages/Privacy";
 
 import NoticeList from "./pages/NoticeList.jsx";        
 import NoticeAdmin from "./components/NoticeAdmin.jsx"; 
@@ -33,6 +35,8 @@ export default function App() {
         <main className="pt-32">
           <Routes>
             <Route path="/" element={<Home />} />
+            <Route path="/terms" element={<Terms />} />
+            <Route path="/privacy" element={<Privacy />} />
             <Route path="/services" element={<Services />} />
             <Route path="/projects" element={<Projects />} />
             <Route path="/about" element={<About />} />

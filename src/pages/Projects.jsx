@@ -62,12 +62,23 @@ export default function Projects() {
 
   return (
     <div className="pt-24 max-w-6xl mx-auto px-6">
-      <h1 className="text-4xl font-bold text-gray-700 mb-12 text-center font-sans">
-        포트폴리오
-      </h1>
+      
+      {/* 행사 갤러리 */}
+      <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-4 mb-12">
+        {images.map(img => (
+          <div key={img.id} className="text-center">
+            <img src={img.url} className="rounded-lg shadow-md" />
+            {img.description && (
+              <p className="text-sm text-gray-400 mt-2">
+                {img.description}
+              </p>
+            )}
+          </div>
+        ))}
+      </div>
 
-      {/* 기존 프로젝트 카드 */}
-      <div className="grid md:grid-cols-3 gap-8 mb-20">
+      {/* 포트폴리오 */}
+      <div className="grid md:grid-cols-3 gap-8">
         {projects.map((p, i) => (
           <motion.div
             key={i}
@@ -81,34 +92,17 @@ export default function Projects() {
             </div>
 
             <p className="text-sm text-gray-500 mb-2 font-sans">{p.year}</p>
-            <h3 className="text-lg font-semibold mb-3 text-gray-800 font-sans">{p.name}</h3>
+            <h3 className="text-sm font-semibold mb-3 text-gray-800 font-sans">{p.name}</h3>
             <p className="text-sm text-primary font-medium mb-2 font-sans">{p.role}</p>
             <div className="h-[1px] bg-gray-300 my-2"></div>
             <p className="text-sm text-gray-700 font-sans">{p.scale}</p>
           </motion.div>
         ))}
       </div>
-
-      {/* 행사 갤러리 */}
-      <h2 className="text-3xl font-bold text-gray-700 text-center mb-8">
-        행사 사진
-      </h2>
-
-      <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-4">
-        {images.map(img => (
-          <div key={img.id} className="text-center">
-            <img src={img.url} className="rounded-lg shadow-md" />
-            {img.description && (
-              <p className="text-sm text-gray-400 mt-2">
-                {img.description}
-              </p>
-            )}
-          </div>
-        ))}
-      </div>
     </div>
   );
 }
+
 
 
 

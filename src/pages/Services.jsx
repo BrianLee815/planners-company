@@ -94,9 +94,9 @@ const steps = [
 
       {/* PROCESS */}
       <section className="mb-28">
-        <h2 className="text-3xl font-bold text-gray-700 text-center mb-8" style={{ marginBottom: "1cm" }}>
+        {/* <h2 className="text-3xl font-bold text-gray-700 text-center mb-8" style={{ marginBottom: "1cm" }}>
           행사 기획 및 운영 프로세스
-        </h2>
+        </h2> */}
         
 
         {/* IMAGES */}

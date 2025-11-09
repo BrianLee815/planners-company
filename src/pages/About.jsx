@@ -42,10 +42,10 @@ export default function About() {
     <div className="pt-24 w-full px-4 sm:px-6 bg-white text-black leading-relaxed font-sans text-left">
 
       {/* 회사 소개 */}
-      <h1 className="text-4xl font-bold text-black mb-4 text-center">
+      {/* <h1 className="text-4xl font-bold text-black mb-4 text-center">
         회사 소개
       </h1>
-      <p className="text-gray-500 text-center mb-12">Company Introduction</p>
+      <p className="text-gray-500 text-center mb-12">Company Introduction</p> */}
 
       <section className="mb-20 text-center">
         <p className="text-lg md:max-w-3xl mx-auto">
@@ -106,46 +106,47 @@ export default function About() {
 
       {/* 위치 */}
       <section className="py-16 bg-gray-50">
-        <h2 className="text-3xl font-bold text-center text-black mb-2">
-          오시는 길
-        </h2>
-        <p className="text-gray-500 text-center mb-10">Location / Directions</p>
+  {/* 제목 가운데 정렬 */}
+  <h2 className="text-3xl font-bold text-black mb-8 text-center">
+    Directions
+  </h2>
 
-        <div className="md:max-w-5xl mx-auto grid md:grid-cols-2 gap-10 items-center">
-          <div className="w-full h-[350px] rounded-xl overflow-hidden shadow-md">
-            <iframe
-              title="location"
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3166.013537166538!2d127.0160173952164!3d37.48400691853165!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x357ca13e2fcf9dbb%3A0x41f2f5de65091fbc!2z7ISc7Jq47Yq567OE7IucIOyEnOy0iOq1rCDshJzstIjspJHslZnroZwy6ri4IDM1!5e0!3m2!1sko!2skr!4v1762410876329!5m2!1sko!2skr"
-              className="w-full h-full border-0"
-              allowFullScreen=""
-              loading="lazy"
-              referrerPolicy="no-referrer-when-downgrade"
-            ></iframe>
-          </div>
+  <div className="md:max-w-5xl mx-auto md:flex md:items-start md:gap-10">
+    {/* 좌측: 연락처 */}
+    <ul className="md:w-1/2 space-y-2 text-gray-700 text-sm leading-relaxed">
+      <li>
+        <span className="font-medium text-black">주소|</span>
+        서울특별시 서초구 서초중앙로2길 35 동일빌딩 210호(06721)
+      </li>
+      <li>
+        <span className="font-medium text-black">Donil Building, 35, Seochojungang-ro 2-gil, Seocho-gu, Seoul</span><br />
+      </li>
+      <li>
+        <span className="font-medium text-black">전화번호</span><br />
+        02-6952-0140
+      </li>
+      <li>
+        <span className="font-medium text-black">이메일</span><br />
+        plan1@plannerscom.kr
+      </li>
+    </ul>
 
-          <div>
-            <h3 className="text-xl font-semibold text-gray-900 mb-4">대중교통 안내</h3>
-            <ul className="space-y-4 text-gray-700 leading-relaxed">
-              <li>
-                <span className="font-medium text-primary">지하철</span><br/>
-                • <b>3호선 남부터미널역</b> 3번 출구 도보 8분
-              </li>
-              <li>
-                <span className="font-medium text-primary">버스</span><br/>
-                • <b>국제전자센터 정류장</b> 하차 (도보 5분)<br/>
-                <span className="text-sm text-gray-600">
-                  간선: 461, 641 &nbsp;|&nbsp; 지선: 3420, 4319
-                </span>
-              </li>
-              <li>
-                <span className="font-medium text-primary">택시/차량</span><br/>
-                서울 서초구 서초중앙로2길 35 돈일빌딩 210호<br/>
-                <span className="text-sm text-gray-500">(주차 공간 협의 필요 시 문의 바랍니다.)</span>
-              </li>
-            </ul>
-          </div>
-        </div>
-      </section>
+    {/* 우측: 지도 */}
+    <div className="md:w-1/2 w-full h-[350px] rounded-xl overflow-hidden shadow-md mt-6 md:mt-0">
+      <iframe
+        title="location"
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3166.013537166538!2d127.0160173952164!3d37.48400691853165!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x357ca13e2fcf9dbb%3A0x41f2f5de65091fbc!2z7ISc7Jq47Yq567OE7IucIOyEnOy0iOq1rCDshJzstIjspJHslZnroZwy6ri4IDM1!5e0!3m2!1sko!2skr!4v1762410876329!5m2!1sko!2skr"
+        className="w-full h-full border-0"
+        allowFullScreen
+        loading="lazy"
+        referrerPolicy="no-referrer-when-downgrade"
+      ></iframe>
+    </div>
+  </div>
+</section>
+
+
+    
 
     </div>
   );

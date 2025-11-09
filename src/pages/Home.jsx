@@ -211,7 +211,7 @@ export default function Home() {
 
       {/* Partners Section */}
       <section className="bg-white">
-        <h2 className="text-3xl font-bold text-center text-gray-700 mb-12">Partners</h2>
+        <h2 className="text-3xl font-bold text-center text-gray-700 mb-12">Our Partners</h2>
         <div className="max-w-6xl mx-auto grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-8 px-6">
           {partners.map((partner, idx) => (
             <a key={idx} href={partner.url} target="_blank" rel="noopener noreferrer" className="group">

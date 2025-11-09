@@ -31,11 +31,11 @@ export default function Navbar() {
           <div className="hidden sm:flex items-center gap-6">
             
             {/* PC 메뉴 */}
-            <nav className="flex gap-6 text-medium font-medium">
-              <Link to="/services" className="text-gray-700 hover:text-primary transition">서비스</Link>
-              <Link to="/projects" className="text-gray-700 hover:text-primary transition">포트폴리오</Link>
-              <Link to="/about" className="text-gray-700 hover:text-primary transition">회사소개</Link>
-              <Link to="/notices" className="text-gray-700 hover:text-primary transition">공지사항</Link>
+            <nav className="flex gap-6 text-sm font-medium">
+              <Link to="/services" className="text-gray-700 hover:text-primary transition">Services</Link>
+              <Link to="/projects" className="text-gray-700 hover:text-primary transition">Portpolio</Link>
+              <Link to="/about" className="text-gray-700 hover:text-primary transition">About</Link>
+              <Link to="/notices" className="text-gray-700 hover:text-primary transition">Notice</Link>
             </nav>
 
             {/* 문의하기 버튼 */}
