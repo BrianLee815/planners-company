@@ -69,7 +69,7 @@ export default function Home() {
       {/* Services Section */}
       <section id="services" className="py-24 bg-white text-gray-800">
         <div className="max-w-6xl mx-auto px-6">
-          <h2 className="text-3xl md:text-4xl font-serif font-bold text-center mb-16 text-gray-900">
+          <h2 className="text-3xl md:text-4xl font-semibold font-bold text-center mb-16 text-gray-900">
             사업분야
           </h2>
           <div className="grid md:grid-cols-3 gap-12">
@@ -94,11 +94,11 @@ export default function Home() {
       {/* Certification Section with Modal */}
       <section className="py-28 bg-white text-gray-800">
         <div className="max-w-6xl mx-auto px-6">
-          <h2 className="text-3xl md:text-4xl font-serif font-bold text-center mb-16 text-gray-700">
+          <h2 className="text-3xl md:text-4xl font-semibold font-bold text-center mb-16 text-gray-700">
             인증 및 공식 등록 현황
           </h2>
 
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-8 mb-16">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-2 mb-16">
             {certs.map((src, i) => (
               <motion.div
                 key={i}
@@ -109,7 +109,7 @@ export default function Home() {
                 className="overflow-hidden rounded-xl shadow-md hover:shadow-xl transition bg-white cursor-pointer"
                 onClick={() => setSelectedCert(src)} // 클릭 시 모달 열기
               >
-                <img src={src} alt={`Certification ${i + 1}`} className="w-full h-auto object-contain p-4"/>
+                <img src={src} alt={`Certification ${i + 1}`} className="w-full h-full object-cover"/>
               </motion.div>
             ))}
           </div>

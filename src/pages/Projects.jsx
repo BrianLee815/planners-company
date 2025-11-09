@@ -39,7 +39,7 @@ export default function Projects() {
   return (
     <div className="pt-32 max-w-6xl mx-auto px-6">
       <h1 className="text-4xl font-bold text-gray-700 mb-12 text-center font-sans">
-        Portfolio
+        포트폴리오
       </h1>
 
       {/* 기존 프로젝트 카드 */}
@@ -67,7 +67,7 @@ export default function Projects() {
 
       {/* ✅ 행사 갤러리 */}
       <h2 className="text-4xl font-bold text-gray-700 text-center mb-8">
-        Gallery
+        행사 사진
       </h2>
 
       {images.length === 0 ? (
