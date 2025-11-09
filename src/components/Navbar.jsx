@@ -21,7 +21,7 @@ export default function Navbar() {
   to="/" 
   className="flex items-center hover:opacity-80 transition"
 >
-  <img src={logo} alt="Logo" className="h-12 w-auto" />
+  <img src={logo} alt="Logo" className="h-14 w-auto" />
 </Link>
 
         {/* 메뉴 + 문의하기 (큰 화면) & 햄버거 버튼 (작은 화면) */}
@@ -31,7 +31,7 @@ export default function Navbar() {
           <div className="hidden sm:flex items-center gap-6">
             
             {/* PC 메뉴 */}
-            <nav className="flex gap-6 text-sm font-medium">
+            <nav className="flex gap-6 text-medium font-medium">
               <Link to="/services" className="text-gray-700 hover:text-primary transition">서비스</Link>
               <Link to="/projects" className="text-gray-700 hover:text-primary transition">포트폴리오</Link>
               <Link to="/about" className="text-gray-700 hover:text-primary transition">회사소개</Link>
@@ -41,7 +41,7 @@ export default function Navbar() {
             {/* 문의하기 버튼 */}
             <Link
               to="/contact"
-              className="px-3 py-2 rounded-lg bg-primary/10 text-primary border border-primary hover:bg-primary hover:text-white transition-colors text-sm"
+              className="px-3 py-2 rounded-lg bg-primary/10 text-primary border border-primary hover:bg-primary hover:text-white transition-colors text-medium"
             >
               문의하기
             </Link>
