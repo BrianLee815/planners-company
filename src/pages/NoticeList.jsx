@@ -14,7 +14,7 @@ export default function NoticeBoard() {
   }, []);
 
   return (
-    <div className="pt-32 max-w-4xl mx-auto p-6">
+    <div className="pt-24 max-w-4xl mx-auto p-6">
       <h2 className="text-3xl font-bold mb-6 text-center">공지사항</h2>
 
       <div className="border rounded-md overflow-hidden shadow-sm">

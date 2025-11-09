@@ -90,7 +90,7 @@ const steps = [
 
 
   return (
-    <div className="pt-32 max-w-6xl mx-auto px-6 bg-gray-100 text-black font-sans">
+    <div className="pt-24 max-w-6xl mx-auto px-6 bg-gray-100 text-black font-sans">
 
       {/* PROCESS */}
       <section className="mb-28">

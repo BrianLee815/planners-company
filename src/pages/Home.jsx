@@ -92,7 +92,7 @@ export default function Home() {
       </section>
 
       {/* Certification Section with Modal */}
-      <section className="py-28 bg-white text-gray-800">
+      <section className="py-5 bg-white text-gray-800">
         <div className="max-w-6xl mx-auto px-6">
           <h2 className="text-3xl md:text-4xl font-semibold font-bold text-center mb-16 text-gray-700">
             인증 및 공식 등록 현황
@@ -160,7 +160,7 @@ export default function Home() {
 
 
       {/* Overseas Exhibition Section */}
-      <section className="mb-32">
+      <section className="mb-32 py-10">
         <h2 className="text-3xl font-bold text-gray-700 text-center mb-16">Overseas Exhibition</h2>
         <div className="relative max-w-5xl mx-auto">
           <img src={worldMap} alt="World Map" className="w-full opacity-90"/>
@@ -210,7 +210,7 @@ export default function Home() {
       </section>
 
       {/* Partners Section */}
-      <section className="py-24 bg-white">
+      <section className="bg-white">
         <h2 className="text-3xl font-bold text-center text-gray-700 mb-12">Partners</h2>
         <div className="max-w-6xl mx-auto grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-8 px-6">
           {partners.map((partner, idx) => (

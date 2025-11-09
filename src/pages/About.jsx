@@ -39,7 +39,7 @@ const organization = {
 
 export default function About() {
   return (
-    <div className="pt-32 w-full px-4 sm:px-6 bg-white text-black leading-relaxed font-sans text-left">
+    <div className="pt-24 w-full px-4 sm:px-6 bg-white text-black leading-relaxed font-sans text-left">
 
       {/* 회사 소개 */}
       <h1 className="text-4xl font-bold text-black mb-4 text-center">

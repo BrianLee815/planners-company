@@ -37,7 +37,7 @@ export default function Projects() {
   }, []);
 
   return (
-    <div className="pt-32 max-w-6xl mx-auto px-6">
+    <div className="pt-24 max-w-6xl mx-auto px-6">
       <h1 className="text-4xl font-bold text-gray-700 mb-12 text-center font-sans">
         포트폴리오
       </h1>
