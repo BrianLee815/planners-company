@@ -1,5 +1,4 @@
-// 컴포넌트 밖에 선언
-// 컴포넌트 밖에 선언
+
 const organization = {
   title: "대표이사",
   children: [
@@ -42,14 +41,15 @@ export default function About() {
   return (
     <div className="pt-32 w-full px-4 sm:px-6 bg-white text-black leading-relaxed font-sans text-left">
 
-      <h1 className="text-4xl font-bold text-black mb-12 text-center">
+      {/* 회사 소개 */}
+      <h1 className="text-4xl font-bold text-black mb-4 text-center">
         회사 소개
       </h1>
+      <p className="text-gray-500 text-center mb-12">Company Introduction</p>
 
-      {/* 회사 소개 */}
       <section className="mb-20 text-center">
         <p className="text-lg md:max-w-3xl mx-auto">
-          플래너스 컴퍼니는 국제회의, 포럼, 박람회, 어워즈 등 다양한 컨벤션 행사를 
+          플래너스 컴퍼니는 국제회의, 포럼, 박람회등 다양한 컨벤션 행사를 
           전문적으로 기획·운영하는 기업입니다. 
           우리는 품격 있는 행사 경험과 완성도 높은 운영을 통해 
           고객의 목적에 최적화된 솔루션을 제공합니다.
@@ -58,41 +58,37 @@ export default function About() {
 
       {/* 조직도 */}
       <section className="py-16 bg-gray-50">
-  <div className="text-center mb-12">
-    <h2 className="text-3xl font-bold text-gray-800">조직 구성</h2>
-    <p className="text-gray-500 mt-2">Organization Structure</p>
-  </div>
-
-  <div className="flex flex-col items-center">
-    {/* 대표이사 */}
-    <div className="px-8 py-4 border border-gray-300 bg-white rounded-lg shadow-sm font-semibold text-lg mb-10">
-      {organization.title}
-    </div>
-
-    {/* 하위 부서 */}
-    <div className="grid grid-cols-1 md:grid-cols-4 gap-6 w-full max-w-4xl">
-      {organization.children.map((dept, i) => (
-        <div key={i} className="px-6 py-4 border border-gray-200 bg-white rounded-md shadow-sm font-medium text-gray-700 hover:shadow-md transition">
-          <div className="font-semibold text-center mb-2">{dept.title}</div>
-
-          {/* 하위 팀/업무가 있는 경우 */}
-          {dept.children && (
-            <ul className="list-disc list-inside text-sm mt-2 space-y-1">
-              {dept.children.map((sub, j) => (
-                <li key={j}>{sub.title}</li>
-              ))}
-            </ul>
-          )}
+        <div className="text-center mb-12">
+          <h2 className="text-3xl font-bold text-gray-800">조직 구성</h2>
+          <p className="text-gray-500 mt-2">Organization Structure</p>
         </div>
-      ))}
-    </div>
-  </div>
-</section>
 
+        <div className="flex flex-col items-center">
+          <div className="px-8 py-4 border border-gray-300 bg-white rounded-lg shadow-sm font-semibold text-lg mb-10">
+            {organization.title}
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-4 gap-6 w-full max-w-4xl">
+            {organization.children.map((dept, i) => (
+              <div key={i} className="px-6 py-4 border border-gray-200 bg-white rounded-md shadow-sm font-medium text-gray-700 hover:shadow-md transition">
+                <div className="font-semibold text-center mb-2">{dept.title}</div>
+                {dept.children && (
+                  <ul className="list-disc list-inside text-sm mt-2 space-y-1">
+                    {dept.children.map((sub, j) => (
+                      <li key={j}>{sub.title}</li>
+                    ))}
+                  </ul>
+                )}
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
 
       {/* 연혁 */}
-      <section className="pb-32">
-        <h2 className="text-2xl font-bold text-center text-black mb-8">연혁</h2>
+      <section className="py-16">
+        <h2 className="text-2xl font-bold text-center text-black mb-2">연혁</h2>
+        <p className="text-gray-500 text-center mb-8">History</p>
         <ul className="space-y-4 text-sm text-center">
           <li>2023 · 기타행사기획및대행서비스 직접생산확인증명 자격 취득</li>
           <li>2023 · 국내외 침해사고대응 초청교육 개최 용역 사업</li>
@@ -109,13 +105,13 @@ export default function About() {
       </section>
 
       {/* 위치 */}
-      <section className="py-24 bg-gray-50">
-        <h2 className="text-3xl font-bold text-center text-black mb-10">
-          Location
+      <section className="py-16 bg-gray-50">
+        <h2 className="text-3xl font-bold text-center text-black mb-2">
+          오시는 길
         </h2>
+        <p className="text-gray-500 text-center mb-10">Location / Directions</p>
 
         <div className="md:max-w-5xl mx-auto grid md:grid-cols-2 gap-10 items-center">
-          {/* 지도 */}
           <div className="w-full h-[350px] rounded-xl overflow-hidden shadow-md">
             <iframe
               title="location"
@@ -127,13 +123,12 @@ export default function About() {
             ></iframe>
           </div>
 
-          {/* 정보 */}
           <div>
             <h3 className="text-xl font-semibold text-gray-900 mb-4">대중교통 안내</h3>
             <ul className="space-y-4 text-gray-700 leading-relaxed">
               <li>
                 <span className="font-medium text-primary">지하철</span><br/>
-                • <b>3호선 <span className="font-semibold">남부터미널역</span></b> 3번 출구 도보 8분
+                • <b>3호선 남부터미널역</b> 3번 출구 도보 8분
               </li>
               <li>
                 <span className="font-medium text-primary">버스</span><br/>
@@ -155,6 +150,7 @@ export default function About() {
     </div>
   );
 }
+
 
 
 

@@ -8,54 +8,81 @@ const primary = "#1b90e4ff";
 
 const steps = [
   {
-    title: "요구 분석",
+    title: (
+      <span className="text-2xl">
+        요구 분석 (Requirement Analysis)
+      </span>
+    ),
     desc: (
       <>
-        행사 추진의 배경과 전략적 목표를 명확히 정의하고, 주요{" "}
-        <span style={{ color: primary, fontWeight: 600 }}>이해관계자</span> 간의 요구와 기대 수준을
-        체계적으로 파악합니다. 이를 통해 전달해야 할 메시지의 본질을 도출하고, 행사 성격에 부합하는
-        핵심 방향과 성공 지표(KPI)를 설정합니다. 더불어 환경적 제약, 예산 및 일정 조건, 리스크 요인을
-        종합적으로 진단하여 기획 단계 전반에 걸친 전략적 의사결정 기준을 마련합니다.
+        <span style={{ color: primary }}>
+          행사 추진 배경과 전략적 목표를 상세히 정의하고, 주요 이해관계자의 요구와 기대를 면밀히 분석합니다. 이를 바탕으로 핵심 KPI와 전략 방향을 수립하며, 예산, 일정, 리스크 요인을 종합적으로 검토하여 기획 전반에 적용 가능한 기준을 마련합니다. 또한, 예상되는 제약과 환경적 요인을 고려하여 의사결정의 근거를 강화합니다.
+        </span>
+        <br /><br />
+        <span style={{ color: "black" }}>
+          Define the event's background and strategic goals in detail, thoroughly analyzing the requirements and expectations of key stakeholders. Establish core KPIs and strategic directions while reviewing budget, schedule, and risk factors comprehensively. Consider potential constraints and environmental factors to reinforce decision-making criteria.
+        </span>
       </>
     ),
   },
   {
-    title: "프로그램 설계",
+    title: (
+      <span className="text-2xl">
+        프로그램 설계 (Program Design)
+      </span>
+    ),
     desc: (
       <>
-        전체 행사 구조와 <span style={{ color: primary, fontWeight: 600 }}>세션 구성</span>을 설계하며,
-        참여자의 이동 동선, 몰입 경험, 정보 전달 강도 등 다양한 경험 요소를 균형 있게 조율합니다. 
-        연사/패널 구성, 무대 및 스토리 전개 방식, 상호 소통 포인트를 정교하게 설계하여 행사 메시지가
-        자연스럽게 전달되는 흐름을 구축합니다. 이와 더불어 대체 운영 시나리오 또한 준비하여 예측 불가
-        상황에서도 안정적인 진행이 유지되도록 합니다.
+        <span style={{ color: primary }}>
+          전체 행사 구조와 세션 구성을 구체적으로 설계하며, 참여자의 이동 동선, 몰입 경험, 정보 전달 강도를 종합적으로 조율합니다. 연사와 패널 구성, 스토리 전개 방식, 상호 소통 포인트를 체계적으로 계획하여 메시지 전달의 자연스러운 흐름을 확보합니다. 또한, 예측 불가 상황을 대비한 대체 운영 시나리오를 마련합니다.
+        </span>
+        <br /><br />
+        <span style={{ color: "black" }}>
+          Design the overall event structure and session layout in detail, coordinating participant flow, engagement, and information delivery. Plan speaker and panel arrangements, story progression, and interaction points to ensure a natural flow of the event message. Prepare alternative operation scenarios to address unforeseen situations.
+        </span>
       </>
     ),
   },
   {
-    title: "현장 운영",
+    title: (
+      <span className="text-2xl">
+        현장 운영 (On-site Management)
+      </span>
+    ),
     desc: (
       <>
-        행사 전 과정의 실무 실행력을 책임지는 단계로,{" "}
-        <span style={{ color: primary, fontWeight: 600 }}>스태프 운영</span>, 무대·음향·영상(AV) 시스템,
-        타임라인 컨트롤을 총괄합니다. 리허설을 통해 운영 동선과 역할 체계를 사전에 검증하고, 현장 진행 중
-        발생할 수 있는 변수에 대비한 커뮤니케이션 라인과 의사결정 프로토콜을 가동합니다. 결과적으로 행사의
-        메시지와 분위기를 방해하지 않으면서 매끄럽고 안정적인 진행을 보장합니다.
+        <span style={{ color: primary }}>
+          행사 전 과정의 실무 실행을 총괄하며, 스태프 운영, 무대·음향·영상 시스템, 타임라인 관리를 책임집니다. 리허설을 통해 운영 동선과 역할 체계를 검증하고, 돌발 상황에 대비한 커뮤니케이션 라인과 의사결정 프로토콜을 가동하여 행사가 매끄럽고 안정적으로 진행되도록 합니다.
+        </span>
+        <br /><br />
+        <span style={{ color: "black" }}>
+          Oversee the entire event execution, managing staff, stage, AV systems, and timelines. Verify operational flow and role assignments through rehearsals, and activate communication lines and decision-making protocols to ensure smooth and stable event execution.
+        </span>
       </>
     ),
   },
   {
-    title: "성과 평가 및 보고",
+    title: (
+      <span className="text-2xl">
+        성과 평가 및 보고 (Evaluation & Reporting)
+      </span>
+    ),
     desc: (
       <>
-        행사 종료 후 참가자 <span style={{ color: primary, fontWeight: 600 }}>만족도</span>, KPI 달성도,
-        브랜드/조직에 미친 영향 등을 다각도로 분석합니다. 정량·정성 데이터를 통합하여 성과를 평가하고,
-        향후 발전 방향과 개선 포인트를 명확하게 제시하는 사후보고서를 제공합니다. 이를 통해 단일 행사에
-        머물지 않고, 조직의 지속적 메시지 전략·브랜딩·관계 형성 관점에서 장기적인 가치가 확장될 수 있도록
-        전략적 인사이트를 제공합니다.
+        <span style={{ color: primary }}>
+          행사 종료 후 참가자 만족도, KPI 달성도, 브랜드 및 조직에 미친 영향 등을 다각도로 분석합니다. 정량적·정성적 데이터를 통합하여 성과를 평가하고, 향후 개선 포인트와 전략적 제안이 포함된 상세 보고서를 제공합니다. 이를 통해 단기적 성과뿐 아니라 조직의 장기적 메시지 전략과 브랜딩 가치 확장을 지원합니다.
+        </span>
+        <br /><br />
+        <span style={{ color: "black" }}>
+          After the event, analyze participant satisfaction, KPI achievement, and the impact on the brand and organization from multiple perspectives. Integrate quantitative and qualitative data to evaluate performance and provide a detailed report with improvement points and strategic recommendations. This supports not only short-term results but also the long-term expansion of messaging strategy and branding value.
+        </span>
       </>
     ),
   },
 ];
+
+
+
 
 
 
