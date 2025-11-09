@@ -8,7 +8,7 @@ export default function Footer() {
     <footer className="bg-white border-t border-gray-200 text-center py-6 mt-16 text-[10px] text-gray-600">
       
       {/* 주소 */}
-      <p className="mt-1 text-[10px]">
+      <p className="mt-1 text-xs">
         210, Donil Building, 35, Seochojungang-ro 2-gil, Seocho-gu, Seoul
       </p>
 
@@ -57,7 +57,7 @@ export default function Footer() {
       </div>
 
       {/* 이용약관 / 개인정보처리방침 링크 */}
-      <div className="mt-2 flex justify-center gap-4 text-[10px]">
+      <div className="mt-2 flex justify-center gap-4 text-xs">
         <Link
           to="/terms"
           className="hover:underline text-gray-600"
@@ -73,7 +73,7 @@ export default function Footer() {
       </div>
 
       {/* 저작권 */}
-      <p className="text-gray-800 font-medium text-[12px] mt-2">
+      <p className="text-gray-800 font-medium text-xs mt-2">
         © 2025 PLANNERSCOM. All rights reserved.
       </p>
     </footer>

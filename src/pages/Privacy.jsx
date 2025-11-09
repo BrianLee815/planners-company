@@ -77,9 +77,9 @@ export default function PrivacyPolicy() {
           개인정보 관련 문의, 개선 요청, 불만 사항 등을 언제든지 연락할 수 있습니다.
         </p>
         <p>
-          이름: 홍길동 <br />
-          부서: 개인정보관리팀 <br />
-          연락처: privacy@example.com / 010-1234-5678
+          이름: 정형진 <br />
+          부서: 기획본부 <br />
+          연락처: plan1@plannerscom.kr/ 010-9369-2286
         </p>
       </section>
 
