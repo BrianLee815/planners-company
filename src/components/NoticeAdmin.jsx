@@ -66,12 +66,14 @@ export default function NoticeAdmin() {
     }
   };
 
+  // ✅ 새 탭으로 HTML 파일 열기
   const handleGoToGuide = () => {
-    window.location.href = "src/pages/Adminguide.html";
+    window.open("/Adminguide.html", "_blank"); // public 폴더에 HTML 파일 위치
   };
 
   return (
     <div className="max-w-3xl mx-auto p-6">
+      {/* 관리방법 버튼 */}
       <div className="flex justify-end mb-4">
         <button
           onClick={handleGoToGuide}
@@ -122,7 +124,12 @@ export default function NoticeAdmin() {
             <h3 className="font-bold text-lg mb-2">{notice.title}</h3>
             <p className="mb-2">{notice.content}</p>
             {notice.fileUrl && (
-              <a href={notice.fileUrl} target="_blank" rel="noopener noreferrer" className="text-blue-500 underline mb-2">
+              <a
+                href={notice.fileUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-blue-500 underline mb-2"
+              >
                 첨부 파일 보기
               </a>
             )}
@@ -147,6 +154,7 @@ export default function NoticeAdmin() {
     </div>
   );
 }
+
 
 
 
