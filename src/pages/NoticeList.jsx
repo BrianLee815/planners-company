@@ -18,7 +18,7 @@ export default function NoticeBoard() {
   if (!selectedNotice) {
     return (
       <div className="pt-24 max-w-4xl mx-auto p-6">
-        {/* <h2 className="text-3xl font-bold mb-16 text-center">공지사항</h2> */}
+        <h2 className="text-2xl font-bold mb-16 text-center">공지사항</h2>
 
         <div className="border rounded-md overflow-hidden shadow-sm">
           {notices.map((notice) => {
@@ -51,27 +51,44 @@ export default function NoticeBoard() {
     : "";
 
   // ---------------- 상세 화면 ----------------
+// ---------------- 상세 화면 ----------------
 return (
   <div className="pt-24 max-w-4xl mx-auto p-6">
-  <div className="relative mb-12">
-    {/* 날짜는 왼쪽, 아래쪽으로 살짝 이동 */}
-    <span className="absolute left-0 text-sm text-gray-500 top-8">{dateStr}</span>
+    <div className="relative mb-12">
+      {/* 날짜는 왼쪽, 아래쪽으로 살짝 이동 */}
+      <span className="absolute left-0 text-sm text-gray-500 top-8">{dateStr}</span>
 
-    {/* 제목은 가운데 */}
-    <h2 className="text-2xl font-bold text-center">{selectedNotice.title}</h2>
-  </div>
+      {/* 제목은 가운데 */}
+      <h2 className="text-2xl font-bold text-center">{selectedNotice.title}</h2>
+    </div>
 
-  <div className="bg-gray-50 p-6 rounded whitespace-pre-line text-gray-700 border">
-    {selectedNotice.content}
+    <div className="bg-gray-50 p-6 rounded whitespace-pre-line text-gray-700 border">
+      {selectedNotice.content}
+    </div>
+
+    {/* 첨부파일 링크 */}
+    {selectedNotice.fileUrl && (
+      <div className="mt-4">
+        <a
+          href={selectedNotice.fileUrl}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="text-blue-500 underline"
+        >
+          첨부 파일 보기
+        </a>
+      </div>
+    )}
+
+    <button
+      onClick={() => setSelectedNotice(null)}
+      className="mt-10 text-blue-600 mb-4"
+    >
+      ← 목록으로 돌아가기
+    </button>
   </div>
-  <button
-    onClick={() => setSelectedNotice(null)}
-    className="mt-10 text-blue-600 mb-4"
-  >
-    ← 목록으로 돌아가기
-  </button>
-</div>
 );
+
 
 }
 

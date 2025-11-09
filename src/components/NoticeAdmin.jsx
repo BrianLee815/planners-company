@@ -15,6 +15,7 @@ import {
 export default function NoticeAdmin() {
   const [title, setTitle] = useState("");
   const [content, setContent] = useState("");
+  const [fileUrl, setFileUrl] = useState("");
   const [notices, setNotices] = useState([]);
   const [editingId, setEditingId] = useState(null);
 
@@ -31,25 +32,28 @@ export default function NoticeAdmin() {
 
     if (editingId) {
       const noticeRef = doc(db, "notices", editingId);
-      await updateDoc(noticeRef, { title, content });
+      await updateDoc(noticeRef, { title, content, fileUrl });
       setEditingId(null);
     } else {
       await addDoc(collection(db, "notices"), {
         title,
         content,
         createdAt: new Date(),
-        author: auth.currentUser.email
+        author: auth.currentUser.email,
+        fileUrl
       });
     }
 
     setTitle("");
     setContent("");
+    setFileUrl("");
   };
 
   const handleEdit = (notice) => {
     setEditingId(notice.id);
     setTitle(notice.title);
     setContent(notice.content);
+    setFileUrl(notice.fileUrl || "");
   };
 
   const handleDelete = async (id) => {
@@ -58,11 +62,25 @@ export default function NoticeAdmin() {
       setEditingId(null);
       setTitle("");
       setContent("");
+      setFileUrl("");
     }
+  };
+
+  const handleGoToGuide = () => {
+    window.location.href = "src/pages/Adminguide.html";
   };
 
   return (
     <div className="max-w-3xl mx-auto p-6">
+      <div className="flex justify-end mb-4">
+        <button
+          onClick={handleGoToGuide}
+          className="p-2 text-white rounded bg-gray-500 hover:bg-gray-600"
+        >
+          관리방법
+        </button>
+      </div>
+
       <h2 className="text-2xl font-bold mb-4 text-center">공지사항 관리</h2>
 
       <input
@@ -76,6 +94,13 @@ export default function NoticeAdmin() {
         placeholder="내용"
         value={content}
         onChange={(e) => setContent(e.target.value)}
+        className="border p-2 w-full mb-2"
+      />
+      <input
+        type="text"
+        placeholder="첨부 파일 링크 (Google Drive)"
+        value={fileUrl}
+        onChange={(e) => setFileUrl(e.target.value)}
         className="border p-2 w-full mb-2"
       />
 
@@ -95,9 +120,13 @@ export default function NoticeAdmin() {
             className="border p-4 mb-4 rounded bg-white shadow-sm flex flex-col items-center text-center"
           >
             <h3 className="font-bold text-lg mb-2">{notice.title}</h3>
-            <p className="mb-4">{notice.content}</p>
+            <p className="mb-2">{notice.content}</p>
+            {notice.fileUrl && (
+              <a href={notice.fileUrl} target="_blank" rel="noopener noreferrer" className="text-blue-500 underline mb-2">
+                첨부 파일 보기
+              </a>
+            )}
 
-            {/* 가운데 버튼 */}
             <div className="flex gap-2">
               <button
                 onClick={() => handleEdit(notice)}

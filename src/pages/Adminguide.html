@@ -1,0 +1,153 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>홈페이지 관리 가이드 - Admin</title>
+  <style>
+    html,body{height:100%;margin:0;font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,'Noto Sans KR',sans-serif;background:#e5e9f0;color:#111827}
+    .container{max-width:1000px;margin:40px auto;padding:28px;background:#ffffff;border-radius:12px;border:1px solid #cbd5e1;box-shadow:0 4px 14px rgba(0,0,0,0.08)}
+    h1{font-size:20px;margin:0 0 6px;color:#0f172a;font-weight:700}
+    p.lead{color:#475569;margin-top:0}
+    nav{display:flex;gap:10px;margin:22px 0}
+    .btn{background:#f1f5f9;border:1px solid #cbd5e1;padding:9px 14px;border-radius:8px;color:#1e3a8a;cursor:pointer;font-weight:600;transition:0.2s}
+    .btn:hover{background:#e2e8f0}
+    .card{background:#ffffff;padding:18px;border-radius:10px;margin-bottom:18px;border:1px solid #cbd5e1}
+    .section-title{display:flex;align-items:center;justify-content:space-between;margin-bottom:8px;color:#0f172a;font-weight:600}
+    .code{background:#f8fafc;padding:12px;border-radius:8px;font-family:SFMono-Regular,Menlo,monospace;color:#334155;margin-top:10px;white-space:pre-wrap;border:1px solid #cbd5e1}
+    .muted{color:#64748b;font-size:14px;margin-top:4px}
+    footer{margin-top:24px;color:#64748b;font-size:13px;text-align:right}
+</style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>홈페이지 관리 가이드 <span class="pill">관리자용</span></h1>
+      <p class="lead">관리자 페이지에서 바로 확인·복사 가능한 HTML 버전입니다. (접속 경로: <code>/admin</code>)</p>
+    </header>
+
+    <nav>
+      <button class="btn" data-target="portfolio">포트폴리오 사진 업로드</button>
+      <button class="btn" data-target="inquiries">문의사항 접수</button>
+      <button class="btn" data-target="notice">공지사항 관리</button>
+    </nav>
+
+    <main>
+      <section id="portfolio" class="card">
+        <div class="section-title">
+          <strong>1. 포트폴리오 (행사 사진) 업로드</strong>
+          <div class="actions">
+            <button class="btn" data-copy="#portfolio .code">복사</button>
+            
+          </div>
+        </div>
+        <div class="muted small">Google Drive에 업로드하면 홈페이지에 자동 반영됩니다.</div>
+        <div class="code">경로: Google Drive &gt; 플래너스컴퍼니행사사진 폴더
+
+사진을 폴더에 업로드 후 설명(alt/설명 텍스트) 추가하기:
+1) Google Drive 폴더에 업로드한 사진 선택
+2) 오른쪽 상단 점 3개 클릭 → 파일 정보
+3) 세부정보 탭에서 '설명' 입력 → 저장
+
+설명 입력 시: 사진 하단에 해당 텍스트가 노출됩니다.</div>
+        
+      </section>
+
+      <section id="inquiries" class="card">
+        <div class="section-title">
+          <strong>2. 문의사항 접수 관리</strong>
+          <div class="actions">
+            <button class="btn" data-copy="#inquiries .code">복사</button>
+            
+          </div>
+        </div>
+        <div class="muted small">방문자가 문의를 작성하면 Google Sheets에 자동 저장되고 이메일 알림이 발송됩니다.</div>
+        <div class="code">플로우:
+1) 방문자: 홈페이지 문의하기폼 작성
+2) 시스템: Google Sheets로 데이터 전송
+3) 시스템: 관리자 이메일로 알림 발송
+
+확인 방법:
+- Google Sheets: 최신 행 확인
+- 이메일: 수신함의 알림 확인</div>
+        
+      </section>
+
+      <section id="notice" class="card">
+  <div class="section-title">
+    <strong>3. 공지사항 관리 (Admin)</strong>
+    <div class="actions">
+      <button class="btn" data-copy="#notice .code">복사</button>
+    </div>
+  </div>
+  <div class="muted small">
+    관리자 페이지에서 공지 등록·수정·삭제가 가능합니다.
+  </div>
+  <div class="code">
+접속 주소: /admin
+
+사용 방법:
+1) 로그인 → 공지사항 관리 화면 접속
+2) 등록: 제목 / 내용 입력 → 저장
+3) 수정: 기존 공지의 수정버튼 클릭 → 내용 수정 → 저장버튼 클릭
+4) 삭제: 삭제 버튼 클릭 → 확인
+
+추가 기능:
+- 최근 게시물이 상단 정렬
+- 이미지는 링크(URL)로 본문에 삽입 가능
+- 공지사항과 함께 파일 첨부:
+  1) 구글 클라우드 공지사항 파일 업로드 폴더에 파일 업로드
+  2) 업로드한 파일의 공유 링크(URL)를 복사
+  3) 공지사항 작성 시, URL 입력란에 붙여넣기
+  → 게시물에 사진/파일과 함께 공지 등록 가능
+  </div>
+</section>
+
+
+    </main>
+
+    <footer>
+      문서 버전: 1.0 · 마지막 수정: 자동
+    </footer>
+  </div>
+
+  <script>
+    // 스크롤 또는 버튼 클릭으로 각 섹션으로 이동
+    document.querySelectorAll('button[data-target]').forEach(btn=>{
+      btn.addEventListener('click',e=>{
+        const id = e.currentTarget.getAttribute('data-target');
+        const el = document.getElementById(id);
+        if(el) el.scrollIntoView({behavior:'smooth',block:'start'});
+      })
+    })
+
+    // 토글 세부사항
+    document.querySelectorAll('button[data-toggle]').forEach(btn=>{
+      btn.addEventListener('click',e=>{
+        const sel = e.currentTarget.getAttribute('data-toggle');
+        const node = document.querySelector(sel);
+        if(!node) return;
+        node.style.display = node.style.display === 'none' ? 'block' : 'none';
+      })
+    })
+
+    // 복사 기능
+    document.querySelectorAll('button[data-copy]').forEach(btn=>{
+      btn.addEventListener('click',async e=>{
+        const sel = e.currentTarget.getAttribute('data-copy');
+        const node = document.querySelector(sel);
+        if(!node) return;
+        try{
+          await navigator.clipboard.writeText(node.innerText);
+          const ok = document.createElement('span');
+          ok.className='copy-ok'; ok.innerText=' 복사됨';
+          e.currentTarget.parentNode.appendChild(ok);
+          setTimeout(()=>ok.remove(),1400);
+        }catch(err){
+          alert('클립보드 복사에 실패했습니다. 수동으로 선택하여 복사하세요.');
+        }
+      })
+    })
+  </script>
+</body>
+</html>
