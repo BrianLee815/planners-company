@@ -43,7 +43,7 @@ export default function Footer() {
         </a>
 
         {/* Flywoi */}
-        <a
+        {/* <a
           href="https://flywoi.pages.dev"
           target="_blank"
           rel="noopener noreferrer"
@@ -53,7 +53,7 @@ export default function Footer() {
             alt="Flywoi"
             className="h-4 w-4 object-contain hover:opacity-80 transition"
           />
-        </a>
+        </a> */}
       </div>
 
       {/* 이용약관 / 개인정보처리방침 링크 */}
