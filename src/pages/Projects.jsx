@@ -1,8 +1,8 @@
 // src/components/Projects.jsx
 import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
-import { Award, Landmark, Globe, Megaphone, GraduationCap } from "lucide-react";
-import Masonry from "react-masonry-css";
+import { Award, Globe, Megaphone, GraduationCap } from "lucide-react";
+// import Masonry from "react-masonry-css"; // Masonry 제거
 
 // --- 프로젝트 데이터 ---
 const projects = [
@@ -50,12 +50,12 @@ const projects = [
   },
 ];
 
-// --- Masonry 반응형 설정 ---
-const breakpointColumnsObj = {
-  default: 3,
-  1100: 2,
-  700: 1,
-};
+// 기존 Masonry 반응형 설정은 더 이상 사용하지 않습니다.
+// const breakpointColumnsObj = {
+//   default: 3, 
+//   1100: 2,    
+//   700: 1,     
+// };
 
 export default function Projects() {
   const [images, setImages] = useState([]);
@@ -69,9 +69,20 @@ export default function Projects() {
       .catch((err) => console.log("이미지 불러오기 실패:", err));
   }, []);
 
+  // 모든 이미지(로컬 6장 + API로 불러온 이미지)를 하나의 배열로 합칩니다.
+  const allImages = [
+    { src: "/images/1.png" },
+    { src: "/images/2.png" },
+    { src: "/images/3.jpg" },
+    { src: "/images/4.jpg" },
+    { src: "/images/5.jpg" },
+    { src: "/images/6.jpg" },
+    ...images.map(img => ({ src: img.url, description: img.description })),
+  ];
+
   return (
     <div className="pt-24 max-w-6xl mx-auto px-6">
-      {/* --- 1️⃣ 프로젝트 카드 (맨 위) --- */}
+      {/* --- 1️⃣ 프로젝트 카드 --- */}
       <div className="grid md:grid-cols-3 gap-8 mb-12">
         {projects.map((p, i) => (
           <motion.div
@@ -94,47 +105,17 @@ export default function Projects() {
         ))}
       </div>
 
-      {/* --- 2️⃣ 상단 6장 이미지 --- */}
+      {/* --- 2️⃣ & 3️⃣ 모든 이미지 (연결해서 출력) --- */}
       <div className="flex justify-center flex-wrap mb-12 gap-2">
-        {[
-          "/images/1.png",
-          "/images/2.png",
-          "/images/3.jpg",
-          "/images/4.jpg",
-          "/images/5.jpg",
-          "/images/6.jpg",
-        ].map((src, i) => (
+        {allImages.map((img, i) => (
           <div
             key={i}
-            className="relative group overflow-hidden rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300 cursor-pointer"
-            style={{ width: "240px", height: "240px" }}
-            onClick={() => window.open(src, "_blank")}
+            className="relative group overflow-hidden rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300 cursor-pointer w-[240px] h-[240px]"
+            onClick={() => window.open(img.src, "_blank")}
           >
             <img
-              src={src}
-              alt={`프로세스 이미지 ${i + 1}`}
-              className="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-500 ease-in-out"
-            />
-          </div>
-        ))}
-      </div>
-
-      {/* --- 3️⃣ 행사 갤러리 --- */}
-      <Masonry
-        breakpointCols={breakpointColumnsObj}
-        className="my-masonry-grid mx-auto mb-12" // mx-auto로 중앙 정렬
-        columnClassName="my-masonry-grid_column pl-2"
-      >
-        {images.map((img) => (
-          <div
-            key={img.id}
-            className="relative group overflow-hidden rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300 cursor-pointer mb-4"
-            style={{ width: "240px", height: "240px" }}
-            onClick={() => window.open(img.url, "_blank")}
-          >
-            <img
-              src={img.url}
-              alt={img.description || "행사 이미지"}
+              src={img.src}
+              alt={img.description || `프로세스 이미지 ${i + 1}`}
               className="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-500 ease-in-out"
             />
             {img.description && (
@@ -144,10 +125,8 @@ export default function Projects() {
             )}
           </div>
         ))}
-      </Masonry>
+      </div>
     </div>
   );
 }
-
-
 
