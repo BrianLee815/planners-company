@@ -77,6 +77,8 @@ export default function Projects() {
     { src: "/images/4.jpg" },
     { src: "/images/5.jpg" },
     { src: "/images/6.jpg" },
+    { src: "/images/7.jpg" },
+    { src: "/images/8.jpg" },
     ...images.map(img => ({ src: img.url, description: img.description })),
   ];
 
