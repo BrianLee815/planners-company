@@ -1,7 +1,7 @@
 // src/components/Projects.jsx
 import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
-import { Award, Landmark, Globe, Megaphone, GraduationCap, Monitor } from "lucide-react";
+import { Award, Landmark, Globe, Megaphone, GraduationCap } from "lucide-react";
 import Masonry from "react-masonry-css";
 
 // --- 프로젝트 데이터 ---
@@ -61,7 +61,9 @@ export default function Projects() {
   const [images, setImages] = useState([]);
 
   useEffect(() => {
-    fetch("https://script.google.com/macros/s/AKfycbw3wsu6ac2YiYD9xmvS_XWEYWG9MSP87-7U1wD1Z2ZZEN3pVdrLczbk_mkbGv7mPY5mTw/exec")
+    fetch(
+      "https://script.google.com/macros/s/AKfycbw3wsu6ac2YiYD9xmvS_XWEYWG9MSP87-7U1wD1Z2ZZEN3pVdrLczbk_mkbGv7mPY5mTw/exec"
+    )
       .then((res) => res.json())
       .then((data) => setImages(data))
       .catch((err) => console.log("이미지 불러오기 실패:", err));
@@ -92,7 +94,7 @@ export default function Projects() {
         ))}
       </div>
 
-      {/* --- 2️⃣ 상단 이미지 --- */}
+      {/* --- 2️⃣ 상단 6장 이미지 --- */}
       <div className="flex justify-center flex-wrap mb-12 gap-2">
         {[
           "/images/1.png",
@@ -120,8 +122,8 @@ export default function Projects() {
       {/* --- 3️⃣ 행사 갤러리 --- */}
       <Masonry
         breakpointCols={breakpointColumnsObj}
-        className="my-masonry-grid flex w-auto mb-12"
-        columnClassName="my-masonry-grid_column bg-clip-padding pl-4"
+        className="my-masonry-grid mx-auto mb-12" // mx-auto로 중앙 정렬
+        columnClassName="my-masonry-grid_column pl-2"
       >
         {images.map((img) => (
           <div
@@ -146,5 +148,6 @@ export default function Projects() {
     </div>
   );
 }
+
 
 
