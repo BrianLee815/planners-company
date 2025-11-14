@@ -1,6 +1,6 @@
 import { useState } from "react"; // useState 훅 import
 import { Link } from "react-router-dom"; // Link 컴포넌트 사용
-import logo from "/src/assets/logo3-re.png";
+import logo from "/src/assets/logo2-re.png";
 
 export default function Navbar() {
   // 모바일 메뉴 상태 관리 (true: 열림, false: 닫힘)
