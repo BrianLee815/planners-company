@@ -21,7 +21,7 @@ export default function Navbar() {
   to="/" 
   className="flex items-center hover:opacity-80 transition"
 >
-  <img src={logo} alt="Logo" className="h-14 w-auto" />
+  <img src={logo} alt="Logo" className="h-16 w-auto" />
 </Link>
 
         {/* 메뉴 + 문의하기 (큰 화면) & 햄버거 버튼 (작은 화면) */}
