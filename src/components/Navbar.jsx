@@ -31,7 +31,7 @@ export default function Navbar() {
           <div className="hidden sm:flex items-center gap-6">
             
             {/* PC 메뉴 */}
-            <nav className="flex gap-6 text-sm font-medium">
+            <nav className="flex gap-6 text-base font-medium">
               <Link to="/services" className="text-gray-700 hover:text-primary transition">Services</Link>
               <Link to="/projects" className="text-gray-700 hover:text-primary transition">Portpolio</Link>
               <Link to="/about" className="text-gray-700 hover:text-primary transition">About</Link>
