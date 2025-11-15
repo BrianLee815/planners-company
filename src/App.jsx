@@ -1,6 +1,8 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Navbar from "./components/Navbar";
-import Footer from "./components/Footer"; 
+import Footer from "./components/Footer";
+import ScrollToTop from "./components/ScrollToTop";
+
 import Home from "./pages/Home";
 import About from "./pages/About";
 import Projects from "./pages/Projects";
@@ -8,10 +10,9 @@ import Contact from "./pages/Contact";
 import Services from "./pages/Services";
 import Terms from "./pages/Terms";
 import Privacy from "./pages/Privacy";
-
-import NoticeList from "./pages/NoticeList.jsx";        
-import NoticeAdmin from "./components/NoticeAdmin.jsx"; 
-import Login from "./components/Login.jsx";             
+import NoticeList from "./pages/NoticeList.jsx";
+import NoticeAdmin from "./components/NoticeAdmin.jsx";
+import Login from "./components/Login.jsx";
 
 import { useState, useEffect } from "react";
 import { onAuthStateChanged } from "firebase/auth";
@@ -21,14 +22,13 @@ export default function App() {
   const [user, setUser] = useState(null);
 
   useEffect(() => {
-    const unsubscribe = onAuthStateChanged(auth, (currentUser) => {
-      setUser(currentUser);
-    });
-    return unsubscribe;
+    return onAuthStateChanged(auth, setUser);
   }, []);
 
   return (
     <Router>
+      <ScrollToTop />
+
       <div className="min-h-screen bg-white text-gray-800">
         <Navbar />
 
@@ -41,23 +41,19 @@ export default function App() {
             <Route path="/projects" element={<Projects />} />
             <Route path="/about" element={<About />} />
             <Route path="/contact" element={<Contact />} />
-
-            {/* 일반 사용자용 공지사항 */}
             <Route path="/notices" element={<NoticeList />} />
 
-            {/* 관리자 로그인 / 관리 페이지 */}
-            <Route
-              path="/admin"
-              element={<Login user={user} onLogin={setUser} />}
-            />
+            <Route path="/admin" element={<Login user={user} onLogin={setUser} />} />
+            
           </Routes>
         </main>
-
       </div>
+
       <Footer />
     </Router>
   );
 }
+
 
 
 
