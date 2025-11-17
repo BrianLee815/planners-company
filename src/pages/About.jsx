@@ -229,8 +229,8 @@ export default function About() {
               <MapPin className="w-5 h-5 text-blue-500 mr-3 mt-1 flex-shrink-0" />
               <div>
                 <span className="font-bold text-black text-lg block">주소</span>
-                서울특별시 서초구 서초중앙로2길 35 동일빌딩 210호(06721)
-                <span className="text-gray-500 block mt-1">Donil Building, 35, Seochojungang-ro 2-gil, Seocho-gu, Seoul</span>
+                서울특별시 서초구 서초중앙로2길 35 210호(06721)
+                <span className="text-gray-500 block mt-1">210, 35, Seochojungang-ro 2-gil, Seocho-gu, Seoul</span>
               </div>
             </li>
             <li className="flex items-center">

@@ -9,7 +9,7 @@ export default function Footer() {
       
       {/* 주소 */}
       <p className="mt-1 text-xs">
-        210, Donil Building, 35, Seochojungang-ro 2-gil, Seocho-gu, Seoul
+        210, 35, Seochojungang-ro 2-gil, Seocho-gu, Seoul
       </p>
 
       {/* 전화번호 + 아이콘을 한 줄에 배치 */}
