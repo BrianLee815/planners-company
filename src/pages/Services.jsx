@@ -102,7 +102,7 @@ const steps = [
         {/* IMAGES */}
         <div className="flex justify-center mb-12 gap-1">
           <img src="/images/1.png" alt="프로세스 이미지 1" className="w-1/2 object-cover" />
-          <img src="/images/2.png" alt="프로세스 이미지 2" className="w-1/2 object-cover" />
+          <img src="/images/2.jpg" alt="프로세스 이미지 2" className="w-1/2 object-cover" />
         </div>
 
         <div className="grid grid-cols-1 gap-6">
