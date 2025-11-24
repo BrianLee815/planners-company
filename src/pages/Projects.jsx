@@ -52,9 +52,9 @@ const projects = [
 
 // 기존 Masonry 반응형 설정은 더 이상 사용하지 않습니다.
 // const breakpointColumnsObj = {
-//   default: 3, 
-//   1100: 2,    
-//   700: 1,     
+//   default: 3,
+//   1100: 2,
+//   700: 1,
 // };
 
 export default function Projects() {
@@ -70,15 +70,16 @@ export default function Projects() {
   }, []);
 
   // 모든 이미지(로컬 6장 + API로 불러온 이미지)를 하나의 배열로 합칩니다.
+  // 로컬 이미지 주석 처리됨
   const allImages = [
-    { src: "/images/1.png" },
-    { src: "/images/2.jpg" },
-    { src: "/images/3.jpg" },
-    { src: "/images/4.jpg" },
-    { src: "/images/5.jpg" },
-    { src: "/images/6.jpg" },
-    { src: "/images/7.jpg" },
-    { src: "/images/8.jpg" },
+    // { src: "/images/1.png" },
+    // { src: "/images/2.jpg" },
+    // { src: "/images/3.jpg" },
+    // { src: "/images/4.jpg" },
+    // { src: "/images/5.jpg" },
+    // { src: "/images/6.jpg" },
+    // { src: "/images/7.jpg" },
+    // { src: "/images/8.jpg" },
     ...images.map(img => ({ src: img.url, description: img.description })),
   ];
 
@@ -131,4 +132,3 @@ export default function Projects() {
     </div>
   );
 }
-
