@@ -1,10 +1,9 @@
 // src/components/Projects.jsx
-import { useEffect, useState } from "react";
-import { motion } from "framer-motion";
-import { Award, Globe, Megaphone, GraduationCap } from "lucide-react";
-// import Masonry from "react-masonry-css"; // Masonry 제거
+import { useEffect, useState, useCallback } from "react"; // useCallback 추가
+import { motion, AnimatePresence } from "framer-motion"; // AnimatePresence 추가
+import { Award, Globe, Megaphone, GraduationCap, X } from "lucide-react"; // X 아이콘 추가
 
-// --- 프로젝트 데이터 ---
+// --- 프로젝트 데이터 (생략 없이 유지) ---
 const projects = [
   {
     name: "2023년 국내외 침해사고 대응 초청교육 개최",
@@ -50,15 +49,64 @@ const projects = [
   },
 ];
 
-// 기존 Masonry 반응형 설정은 더 이상 사용하지 않습니다.
-// const breakpointColumnsObj = {
-//   default: 3,
-//   1100: 2,
-//   700: 1,
-// };
+// 🖼️ 이미지 모달 컴포넌트
+function ImageModal({ image, onClose }) {
+  useEffect(() => {
+    // Esc 키를 눌렀을 때 모달을 닫는 핸들러
+    const handleKeydown = (e) => {
+      if (e.key === 'Escape') {
+        onClose();
+      }
+    };
+    document.addEventListener('keydown', handleKeydown);
+    return () => document.removeEventListener('keydown', handleKeydown);
+  }, [onClose]);
+
+  if (!image) return null;
+
+  return (
+    <motion.div
+      className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/90 backdrop-blur-sm"
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      exit={{ opacity: 0 }}
+      onClick={onClose} // 배경 클릭 시 닫기
+    >
+      <motion.div
+        className="max-w-4xl max-h-[90vh] w-full relative bg-white rounded-lg shadow-2xl"
+        initial={{ scale: 0.9, y: 50 }}
+        animate={{ scale: 1, y: 0 }}
+        exit={{ scale: 0.9, y: 50 }}
+        transition={{ type: "spring", stiffness: 300, damping: 30 }}
+        onClick={(e) => e.stopPropagation()} // 이미지 영역 클릭 시 모달 닫힘 방지
+      >
+        <img
+          src={image.src}
+          alt={image.description || "확대된 이미지"}
+          className="w-full h-auto max-h-[80vh] object-contain rounded-t-lg"
+        />
+        
+        <button
+          className="absolute top-3 right-3 p-2 rounded-full bg-white/30 text-white hover:bg-white/50 transition-colors"
+          onClick={onClose}
+          aria-label="닫기"
+        >
+          <X className="w-6 h-6" />
+        </button>
+
+        {image.description && (
+          <p className="p-3 text-center text-sm text-gray-700 bg-gray-100 rounded-b-lg">
+            {image.description}
+          </p>
+        )}
+      </motion.div>
+    </motion.div>
+  );
+}
 
 export default function Projects() {
   const [images, setImages] = useState([]);
+  const [selectedImage, setSelectedImage] = useState(null); // 👈 새 상태 추가
 
   useEffect(() => {
     fetch(
@@ -70,7 +118,6 @@ export default function Projects() {
   }, []);
 
   // 모든 이미지(로컬 6장 + API로 불러온 이미지)를 하나의 배열로 합칩니다.
-  // 로컬 이미지 주석 처리됨
   const allImages = [
     { src: "/images/0.jpg" },
     { src: "/images/1.jpg" },
@@ -83,9 +130,19 @@ export default function Projects() {
     ...images.map(img => ({ src: img.url, description: img.description })),
   ];
 
+  // 🖼️ 이미지 클릭 핸들러
+  const handleImageClick = useCallback((image) => {
+    setSelectedImage(image);
+  }, []);
+
+  // ❌ 모달 닫기 핸들러
+  const handleCloseModal = useCallback(() => {
+    setSelectedImage(null);
+  }, []);
+
   return (
     <div className="pt-24 max-w-6xl mx-auto px-6">
-      {/* --- 1️⃣ 프로젝트 카드 --- */}
+      {/* 1️⃣ 프로젝트 카드 (생략) */}
       <div className="grid md:grid-cols-3 gap-8 mb-12">
         {projects.map((p, i) => (
           <motion.div
@@ -108,13 +165,13 @@ export default function Projects() {
         ))}
       </div>
 
-      {/* --- 2️⃣ & 3️⃣ 모든 이미지 (연결해서 출력) --- */}
+      {/* 2️⃣ & 3️⃣ 모든 이미지 (클릭 핸들러 수정) */}
       <div className="flex justify-center flex-wrap mb-12 gap-2">
         {allImages.map((img, i) => (
           <div
             key={i}
             className="relative group overflow-hidden rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300 cursor-pointer w-[240px] h-[240px]"
-            onClick={() => window.open(img.src, "_blank")}
+            onClick={() => handleImageClick(img)} // 👈 함수 호출로 변경
           >
             <img
               src={img.src}
@@ -129,6 +186,12 @@ export default function Projects() {
           </div>
         ))}
       </div>
+
+      {/* 🖼️ 이미지 모달 렌더링 */}
+      <AnimatePresence>
+        {selectedImage && <ImageModal image={selectedImage} onClose={handleCloseModal} />}
+      </AnimatePresence>
+      
     </div>
   );
 }
