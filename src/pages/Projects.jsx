@@ -1,7 +1,7 @@
 // src/components/Projects.jsx
-import { useEffect, useState, useCallback } from "react"; // useCallback 추가
-import { motion, AnimatePresence } from "framer-motion"; // AnimatePresence 추가
-import { Award, Globe, Megaphone, GraduationCap, X } from "lucide-react"; // X 아이콘 추가
+import { useEffect, useState, useCallback } from "react";
+import { motion, AnimatePresence } from "framer-motion";
+import { Award, Globe, Megaphone, GraduationCap, X } from "lucide-react";
 
 // --- 프로젝트 데이터 (생략 없이 유지) ---
 const projects = [
@@ -106,18 +106,32 @@ function ImageModal({ image, onClose }) {
 
 export default function Projects() {
   const [images, setImages] = useState([]);
-  const [selectedImage, setSelectedImage] = useState(null); // 👈 새 상태 추가
+  const [selectedImage, setSelectedImage] = useState(null);
 
   useEffect(() => {
     fetch(
       "https://script.google.com/macros/s/AKfycbw3wsu6ac2YiYD9xmvS_XWEYWG9MSP87-7U1wD1Z2ZZEN3pVdrLczbk_mkbGv7mPY5mTw/exec"
     )
       .then((res) => res.json())
-      .then((data) => setImages(data))
+      .then((data) => {
+        // 🚨 API로 불러온 이미지 데이터를 이름(description)순으로 정렬
+        const sortedImages = data.sort((a, b) => {
+            const nameA = a.description ? a.description.toUpperCase() : ''; // null/undefined 처리
+            const nameB = b.description ? b.description.toUpperCase() : '';
+            if (nameA < nameB) {
+                return -1;
+            }
+            if (nameA > nameB) {
+                return 1;
+            }
+            return 0; // 이름이 같을 경우
+        });
+        setImages(sortedImages);
+      })
       .catch((err) => console.log("이미지 불러오기 실패:", err));
   }, []);
 
-  // 모든 이미지(로컬 6장 + API로 불러온 이미지)를 하나의 배열로 합칩니다.
+  // 모든 이미지(로컬 8장 + API로 불러온 이미지)를 하나의 배열로 합칩니다.
   const allImages = [
     { src: "/images/0.jpg" },
     { src: "/images/1.jpg" },
@@ -127,6 +141,7 @@ export default function Projects() {
     { src: "/images/5.jpg" },
     { src: "/images/6.jpg" },
     { src: "/images/7.jpg" },
+    // 💡 API 이미지는 이미 정렬된 상태로 추가됨
     ...images.map(img => ({ src: img.url, description: img.description })),
   ];
 
@@ -165,13 +180,13 @@ export default function Projects() {
         ))}
       </div>
 
-      {/* 2️⃣ & 3️⃣ 모든 이미지 (클릭 핸들러 수정) */}
+      {/* 2️⃣ & 3️⃣ 모든 이미지 */}
       <div className="flex justify-center flex-wrap mb-12 gap-2">
         {allImages.map((img, i) => (
           <div
             key={i}
             className="relative group overflow-hidden rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300 cursor-pointer w-[240px] h-[240px]"
-            onClick={() => handleImageClick(img)} // 👈 함수 호출로 변경
+            onClick={() => handleImageClick(img)}
           >
             <img
               src={img.src}
