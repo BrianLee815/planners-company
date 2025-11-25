@@ -49,10 +49,9 @@ const projects = [
   },
 ];
 
-// 🖼️ 이미지 모달 컴포넌트
+// 🖼️ 이미지 모달 컴포넌트 (변경 없음)
 function ImageModal({ image, onClose }) {
   useEffect(() => {
-    // Esc 키를 눌렀을 때 모달을 닫는 핸들러
     const handleKeydown = (e) => {
       if (e.key === 'Escape') {
         onClose();
@@ -70,7 +69,7 @@ function ImageModal({ image, onClose }) {
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       exit={{ opacity: 0 }}
-      onClick={onClose} // 배경 클릭 시 닫기
+      onClick={onClose}
     >
       <motion.div
         className="max-w-4xl max-h-[90vh] w-full relative bg-white rounded-lg shadow-2xl"
@@ -78,7 +77,7 @@ function ImageModal({ image, onClose }) {
         animate={{ scale: 1, y: 0 }}
         exit={{ scale: 0.9, y: 50 }}
         transition={{ type: "spring", stiffness: 300, damping: 30 }}
-        onClick={(e) => e.stopPropagation()} // 이미지 영역 클릭 시 모달 닫힘 방지
+        onClick={(e) => e.stopPropagation()}
       >
         <img
           src={image.src}
@@ -104,6 +103,24 @@ function ImageModal({ image, onClose }) {
   );
 }
 
+// 💡 파일 이름 추출 함수 추가
+const getFileNameFromUrl = (url) => {
+    if (!url) return '';
+    // 1. URL에서 쿼리 문자열(? 이후) 제거
+    const urlWithoutQuery = url.split('?')[0];
+    // 2. 경로의 마지막 세그먼트 추출 (이것이 파일 이름입니다.)
+    const parts = urlWithoutQuery.split('/');
+    const encodedFileName = parts[parts.length - 1];
+    
+    // 3. URL 디코딩 및 대문자 변환 (정확한 비교를 위해)
+    try {
+        return decodeURIComponent(encodedFileName).toUpperCase();
+    } catch (e) {
+        // 디코딩 실패 시 인코딩된 이름으로 비교
+        return encodedFileName.toUpperCase();
+    }
+};
+
 export default function Projects() {
   const [images, setImages] = useState([]);
   const [selectedImage, setSelectedImage] = useState(null);
@@ -114,10 +131,11 @@ export default function Projects() {
     )
       .then((res) => res.json())
       .then((data) => {
-        // 🚨 API로 불러온 이미지 데이터를 이름(description)순으로 정렬
+        // 🚨 API로 불러온 이미지 데이터를 파일 이름(URL에서 추출)순으로 정렬
         const sortedImages = data.sort((a, b) => {
-            const nameA = a.description ? a.description.toUpperCase() : ''; // null/undefined 처리
-            const nameB = b.description ? b.description.toUpperCase() : '';
+            const nameA = getFileNameFromUrl(a.url);
+            const nameB = getFileNameFromUrl(b.url);
+            
             if (nameA < nameB) {
                 return -1;
             }
@@ -141,7 +159,7 @@ export default function Projects() {
     { src: "/images/5.jpg" },
     { src: "/images/6.jpg" },
     { src: "/images/7.jpg" },
-    // 💡 API 이미지는 이미 정렬된 상태로 추가됨
+    // 💡 API 이미지는 이제 파일 이름 기준으로 정렬된 상태로 추가됨
     ...images.map(img => ({ src: img.url, description: img.description })),
   ];
 
@@ -157,7 +175,7 @@ export default function Projects() {
 
   return (
     <div className="pt-24 max-w-6xl mx-auto px-6">
-      {/* 1️⃣ 프로젝트 카드 (생략) */}
+      {/* 1️⃣ 프로젝트 카드 (변경 없음) */}
       <div className="grid md:grid-cols-3 gap-8 mb-12">
         {projects.map((p, i) => (
           <motion.div
