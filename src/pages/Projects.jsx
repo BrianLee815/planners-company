@@ -72,7 +72,7 @@ export default function Projects() {
   // 모든 이미지(로컬 6장 + API로 불러온 이미지)를 하나의 배열로 합칩니다.
   // 로컬 이미지 주석 처리됨
   const allImages = [
-    { src: "/images/0.jng" },
+    { src: "/images/0.jpg" },
     { src: "/images/1.jpg" },
     { src: "/images/2.jpg" },
     { src: "/images/3.jpg" },
