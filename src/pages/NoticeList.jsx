@@ -18,7 +18,7 @@ export default function NoticeBoard() {
   if (!selectedNotice) {
     return (
       <div className="pt-24 max-w-4xl mx-auto p-6">
-        <h2 className="text-2xl font-bold mb-16 text-center">공지사항</h2>
+        <h2 className="text-3xl font-bold mb-16 text-center">공지사항</h2>
 
         <div className="border rounded-md overflow-hidden shadow-sm">
           {notices.map((notice) => {
