@@ -59,7 +59,7 @@ export default function Contact() {
 
         {/* ⭐ 제목을 맨 위로 이동 */}
         <div>
-          <label className="block text-sm font-medium mb-1">제목(Title)</label>
+          <label className="block text-base font-medium mb-1">제목(Title)</label>
           <input
             type="text"
             name="title"
@@ -71,7 +71,7 @@ export default function Contact() {
         </div>
 
         <div>
-          <label className="block text-sm font-medium mb-1">이름(Name)</label>
+          <label className="block text-base font-medium mb-1">이름(Name)</label>
           <input
             type="text"
             name="name"
@@ -83,7 +83,7 @@ export default function Contact() {
         </div>
 
         <div>
-          <label className="block text-sm font-medium mb-1">이메일(Email Address)</label>
+          <label className="block text-base font-medium mb-1">이메일(Email Address)</label>
           <input
             type="email"
             name="email"
@@ -95,7 +95,7 @@ export default function Contact() {
         </div>
 
         <div>
-          <label className="block text-sm font-medium mb-1">문의 내용(Message)</label>
+          <label className="block text-base font-medium mb-1">문의 내용(Message)</label>
           <textarea
             name="message"
             value={formData.message}
