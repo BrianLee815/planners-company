@@ -1,7 +1,12 @@
 import { useState } from "react";
 
 export default function Contact() {
-  const [formData, setFormData] = useState({ name: "", email: "", message: "" });
+  const [formData, setFormData] = useState({
+    title: "",
+    name: "",
+    email: "",
+    message: ""
+  });
   const [loading, setLoading] = useState(false);
 
   // Google Form 제출 URL
@@ -9,6 +14,7 @@ export default function Contact() {
 
   // Google Form 질문 entry ID
   const ENTRY_IDS = {
+    title: import.meta.env.VITE_CONTACT_ENTRY_TITLE,
     name: import.meta.env.VITE_CONTACT_ENTRY_NAME,
     email: import.meta.env.VITE_CONTACT_ENTRY_EMAIL,
     message: import.meta.env.VITE_CONTACT_ENTRY_MESSAGE,
@@ -23,8 +29,8 @@ export default function Contact() {
     setLoading(true);
 
     try {
-      // fetch + no-cors 모드 사용 → 페이지 이동 없이 제출
       const formDataObj = new URLSearchParams();
+
       Object.keys(formData).forEach((key) => {
         formDataObj.append(ENTRY_IDS[key], formData[key]);
       });
@@ -36,7 +42,7 @@ export default function Contact() {
       });
 
       alert("문의가 제출되었습니다!");
-      setFormData({ name: "", email: "", message: "" });
+      setFormData({ title: "", name: "", email: "", message: "" });
     } catch (err) {
       console.error(err);
       alert("문의 제출 실패");
@@ -47,9 +53,25 @@ export default function Contact() {
 
   return (
     <div className="pt-32 max-w-3xl mx-auto px-6 text-gray-700">
-      <h1 className="text-3xl font-serif font-bold text-primary mb-8 text-center">문의하기</h1>
+      <h1 className="text-3xl font-serif font-bold text-primary mb-8 text-center">
+        문의하기
+      </h1>
 
       <form onSubmit={handleSubmit} className="space-y-6">
+
+        {/* ⭐ 제목을 맨 위로 이동 */}
+        <div>
+          <label className="block text-sm font-medium mb-1">제목(Title)</label>
+          <input
+            type="text"
+            name="title"
+            value={formData.title}
+            onChange={handleChange}
+            required
+            className="w-full bg-gray-100 text-gray-900 border border-gray-300 rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-accent"
+          />
+        </div>
+
         <div>
           <label className="block text-sm font-medium mb-1">이름(Name)</label>
           <input
