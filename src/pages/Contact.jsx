@@ -52,7 +52,7 @@ export default function Contact() {
   };
 
   return (
-    <div className="pt-32 max-w-3xl mx-auto px-6 text-gray-700">
+    <div className="pt-24 max-w-3xl mx-auto px-6 text-gray-700">
       <h2 className="text-3xl font-bold text-gray-800 mb-8">문의하기</h2>
 
       <form onSubmit={handleSubmit} className="space-y-6">
