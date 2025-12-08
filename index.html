@@ -1,22 +1,75 @@
 <!doctype html>
-<html lang="en">
+<html lang="ko">
   <head>
     <meta charset="UTF-8" />
     <link rel="icon" type="image/png" href="/favicon.ico" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>planners-company</title>
+
+    <!-- 페이지 타이틀 -->
+    <title>플래너스컴퍼니 | 국제회의·컨벤션·전시 행사 전문 기업</title>
+
+    <!-- 기본 SEO -->
+    <meta
+      name="description"
+      content="플래너스컴퍼니는 국제회의, 컨벤션, 전시/박람회, 포럼, 시상식 등 MICE 분야 전문 기획 및 운영 기업입니다."
+    />
+    <meta
+      name="keywords"
+      content="플래너스컴퍼니, planners company, plannerscom, 국제회의 기획, 컨벤션 행사 기획, 전시회 운영, 이벤트 대행, MICE 회사"
+    />
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="플래너스컴퍼니 | MICE 전문 행사 기획사" />
+    <meta
+      property="og:description"
+      content="국제회의·포럼·전시·행사 기획 및 운영 전문 기업 플래너스컴퍼니."
+    />
+    <meta property="og:image" content="/og-image.png" />
+    <meta property="og:url" content="https://plannerscom.kr" />
+    <meta property="og:type" content="website" />
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="플래너스컴퍼니" />
+    <meta name="twitter:description" content="MICE · 행사기획 전문 기업" />
+    <meta name="twitter:image" content="/og-image.png" />
+
+    <!-- Canonical -->
+    <link rel="canonical" href="https://plannerscom.kr" />
+
+    <!-- Google Search Console (사이트 소유권 인증) -->
+    <meta name="google-site-verification" content="여기에_코드_붙여넣기" />
+
+    <!-- 구글 폰트(기존 코드 유지) -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-     href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@600;700&display=swap"
-     rel="stylesheet"
-     />
-    
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@600;700&display=swap"
+      rel="stylesheet"
+    />
 
-
+    <!-- Schema.org (구글이 회사를 직접 인식하게 하는 구조화 데이터) -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": "플래너스컴퍼니",
+      "url": "https://plannerscom.kr",
+      "logo": "https://plannerscom.kr/logo.png",
+      "description": "국제회의·컨벤션·포럼·전시 행사 전문 기획사",
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "telephone": "+82-2-6952-0140",
+        "contactType": "customer service",
+        "areaServed": "KR"
+      }
+    }
+    </script>
   </head>
+
   <body>
     <div id="root"></div>
     <script type="module" src="/src/main.jsx"></script>
   </body>
 </html>
+
