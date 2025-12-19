@@ -56,13 +56,15 @@ export default function Home() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1 }}
         >
-          <h2 className="text-5xl md:text-6xl Pretendard font-bold mb-8 text-gray-100 drop-shadow-[0_4px_6px_rgba(0,0,0,0.6)]">
-            국제회의 · 포럼 · 전시/박람회 · 시상식
-          </h2>
-          <p className="text-lg md:text-xl font-light tracking-wide max-w-2xl mx-auto text-gray-100 drop-shadow-[0_4px_6px_rgba(0,0,0,0.6)]">
-            플래너스컴퍼니는 국제회의, 이벤트, 홍보 분야 전문가들이 모인 회사입니다. 고객의 요청에 꼭 맞는 솔루션을 제공하며, 
-            나아가 든든한 파트너가 되어 성공적인 행사를 만드는 것이 목표입니다.
-          </p>
+        <h2 className="text-5xl md:text-6xl Pretendard font-bold mb-8 text-gray-100 [text-shadow:0_2px_8px_rgba(0,0,0,0.8)]">
+          국제회의 · 포럼 · 전시/박람회 · 시상식
+        </h2>
+
+        <p className="text-lg md:text-xl font-normal tracking-wide max-w-2xl mx-auto text-gray-100 [text-shadow:0_2px_8px_rgba(0,0,0,0.8)]">
+         플래너스컴퍼니는 국제회의, 이벤트, 홍보 분야 전문가들이 모인 회사입니다. 고객의 요청에 꼭 맞는 솔루션을 제공하며, 
+          나아가 든든한 파트너가 되어 성공적인 행사를 만드는 것이 목표입니다.
+        </p>
+
         </motion.div>
       </section>
 
