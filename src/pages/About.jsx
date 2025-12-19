@@ -95,8 +95,7 @@ export default function About() {
             viewport={{ once: true }}
             transition={{ delay: 0.2 }}
         >
-            플래너스 컴퍼니는 업계 **평균 합산 10년 이상의 경력을 가진 5인의 전문가**들이<br/>
-            모여 설립한, 경험과 민첩성을 모두 갖춘 전문 기업입니다.
+            플래너스 컴퍼니는 경험과 민첩성을 모두 갖춘 전문 기업입니다.
         </motion.p>
         {/* 🌟🌟🌟 추가 끝 🌟🌟🌟 */}
 
